@@ -10,7 +10,7 @@ It serves as the core API and database layer for roles like **Students**, **HODs
 
 Below is the complete database schema designed using **MongoDB** and **Mongoose**, supporting role-based access and structured data management.
 
-![Database Schema](db.jpg)
+![Database Schema](db.png)
 
 ---
 
