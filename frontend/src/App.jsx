@@ -3,6 +3,7 @@ import Login from "./pages/Login"
 import ForgotPassword from "./pages/ForgotPassword"
 import Register from "./pages/Register"
 import CreateCompany from "./components/CreateCompany"
+import CreateJobRole from "./components/CreateJobRole"
 import { Toaster } from "sonner";
 // import Home from "./pages/Home"
 
@@ -17,6 +18,7 @@ export default function App() {
         <Route path="/register" element={<Register />} /> 
         {/* <Route path="/home" element={<Home />} /> */}
         <Route path="/addCompany" element={<CreateCompany/>} />
+        <Route path="/addJob" element={<CreateJobRole/>} />
       </Routes>
     </BrowserRouter>
   )
