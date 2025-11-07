@@ -5,8 +5,20 @@ const certificationSchema = new mongoose.Schema({
   description: { type: String },
   certification_number: { type: String },
   skills_learned: [{ type: String }],
-  image_url: { type: String } // link to uploaded certificate
-}, { _id: false }); // prevent Mongoose from creating _id for each certification
+  image_url: { type: String }
+}, { _id: false });
+
+// 🟢 NEW — sub-schema for applications
+const appliedJobSchema = new mongoose.Schema({
+  job_role: { type: mongoose.Schema.Types.ObjectId, ref: "JobRole", required: true },
+  company: { type: mongoose.Schema.Types.ObjectId, ref: "Company" },
+  applied_on: { type: Date, default: Date.now },
+  status: { 
+    type: String, 
+    enum: ["Applied", "Shortlisted", "Interviewed", "Selected", "Rejected"], 
+    default: "Applied"
+  }
+}, { _id: false });
 
 const studentSchema = new mongoose.Schema({
   // ===== Personal Info =====
@@ -18,7 +30,7 @@ const studentSchema = new mongoose.Schema({
   phone_number: { type: String },
   address: { type: String },
   photo_url: { type: String },
-  description: { type: String }, // bio / personal description
+  description: { type: String },
 
   // ===== Academic Info =====
   univesity_number: { type: String, required: true, unique: true },
@@ -32,8 +44,11 @@ const studentSchema = new mongoose.Schema({
   login_ref: { type: mongoose.Schema.Types.ObjectId, ref: "Login" },
 
   // ===== Skills & Certifications =====
-  skills: [{ type: String }], // list of skills
-  certifications: [certificationSchema], // array of certifications
+  skills: [{ type: String }],
+  certifications: [certificationSchema],
+
+  // ===== Applied Jobs =====
+  applied_jobs: [appliedJobSchema],  // 👈 NEW
 
   // ===== Placement Info =====
   placed: { type: Boolean, default: false },
@@ -50,18 +65,17 @@ const studentSchema = new mongoose.Schema({
   verification: {
     personal_info: { type: Boolean, default: false },
     academic_info: { type: Boolean, default: false },
-    documents: { type: Boolean, default: false }, // e.g., resume, certificates
-    placement_eligibility: { type: Boolean, default: false } // final approval
+    documents: { type: Boolean, default: false },
+    placement_eligibility: { type: Boolean, default: false }
   },
   approved: { type: Boolean, default: false },
   offer_letter: {
-  file_url: { type: String }, // path to uploaded file
-  job_role: { type: mongoose.Schema.Types.ObjectId, ref: "JobRole" },
-  uploaded_at: { type: Date }
-}
+    file_url: { type: String },
+    job_role: { type: mongoose.Schema.Types.ObjectId, ref: "JobRole" },
+    uploaded_at: { type: Date }
+  }
 
 }, { timestamps: true });
 
 const Student = mongoose.model("Student", studentSchema);
-
 export default Student;
