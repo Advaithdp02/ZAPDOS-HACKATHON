@@ -119,3 +119,41 @@ export const deleteHOD = async (req, res) => {
     res.status(500).json({ message: error.message });
   }
 };
+export const getDepartmentStudents = async (req, res) => {
+  try {
+    const hod = await Hod.findById(req.user.id);
+    if (!hod) return res.status(404).json({ message: "HOD not found" });
+
+    const students = await Student.find({ department_id: hod.department_id })
+      .populate("department_id", "name code")
+      .select("first_name last_name email cgpa year_of_study verification approved placed");
+
+    res.status(200).json(students);
+  } catch (error) {
+    res.status(500).json({ message: error.message });
+  }
+};
+
+// 🟠 Update or verify a student profile
+export const verifyOrEditStudent = async (req, res) => {
+  try {
+    const hod = await Hod.findById(req.user.id);
+    const { studentId } = req.params;
+    const updates = req.body;
+
+    const student = await Student.findById(studentId);
+    if (!student) return res.status(404).json({ message: "Student not found" });
+
+    // Ensure same department
+    if (student.department_id.toString() !== hod.department_id.toString()) {
+      return res.status(403).json({ message: "Access denied. Student not in your department." });
+    }
+
+    Object.assign(student, updates);
+    await student.save();
+
+    res.status(200).json({ message: "Student updated/verified successfully", student });
+  } catch (error) {
+    res.status(500).json({ message: error.message });
+  }
+};

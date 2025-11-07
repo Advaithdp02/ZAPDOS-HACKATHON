@@ -52,7 +52,13 @@ const studentSchema = new mongoose.Schema({
     academic_info: { type: Boolean, default: false },
     documents: { type: Boolean, default: false }, // e.g., resume, certificates
     placement_eligibility: { type: Boolean, default: false } // final approval
-  }
+  },
+  approved: { type: Boolean, default: false },
+  offer_letter: {
+  file_url: { type: String }, // path to uploaded file
+  job_role: { type: mongoose.Schema.Types.ObjectId, ref: "JobRole" },
+  uploaded_at: { type: Date }
+}
 
 }, { timestamps: true });
 

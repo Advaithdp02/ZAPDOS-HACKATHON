@@ -4,9 +4,10 @@ import {
   getAllStudents,
   getStudentById,
   updateStudent,
-  deleteStudent
+  deleteStudent,
+  getOfferLetters
 } from "../controllers/studentController.js";
-
+import { studentProtect } from "../middleware/authMiddleware.js";
 const router = express.Router();
 
 // 🟢 CREATE Student
@@ -23,5 +24,11 @@ router.put("/:id", updateStudent);
 
 // 🔴 DELETE Student
 router.delete("/:id", deleteStudent);
+
+
+
+router.get("/my-offer", studentProtect, getOfferLetters);
+
+
 
 export default router;

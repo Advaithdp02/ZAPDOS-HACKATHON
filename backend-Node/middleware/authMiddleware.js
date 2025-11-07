@@ -40,3 +40,26 @@ export const authorizeRoles = (...allowedRoles) => {
     });
   };
 };
+export const studentProtect = (req, res, next) => {
+  const authHeader = req.headers.authorization;
+
+  if (!authHeader || !authHeader.startsWith("Bearer ")) {
+    return res.status(401).json({ message: "Not authorized, no token" });
+  }
+
+  const token = authHeader.split(" ")[1];
+
+  try {
+    const decoded = jwt.verify(token, process.env.JWT_SECRET);
+    req.user = decoded; // { id, role }
+
+    // Allow only students
+    if (req.user.role !== "Student") {
+      return res.status(403).json({ message: "Access denied. Students only." });
+    }
+
+    next();
+  } catch (error) {
+    return res.status(401).json({ message: "Token invalid or expired" });
+  }
+};

@@ -161,3 +161,19 @@ export const deleteStudent = async (req, res) => {
     res.status(500).json({ message: error.message });
   }
 };
+export const getOfferLetters = async (req, res) => {
+  try {
+    const student = await Student.findById(req.user.id)
+      .populate("offer_letter.job_role", "job_role company package_lpa");
+    
+    if (!student.offer_letter?.file_url) {
+      return res.status(404).json({ message: "No offer letter uploaded yet." });
+    }
+
+    res.status(200).json({
+      file_url: student.offer_letter.file_url,
+      job_role: student.offer_letter.job_role
+    });
+  } catch (error) {
+    res.status(500).json({ message: error.message });
+  }};
