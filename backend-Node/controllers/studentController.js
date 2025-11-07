@@ -2,7 +2,8 @@ import Student from "../models/Student.js";
 import Login from "../models/Login.js";
 import Company from "../models/Company.js";
 import JobRole from "../models/JobRole.js";
-
+import RecruitmentRound from "../models/RecruitmentRound.js";
+import { sendEmail, templates } from "../utils/email.js";
 // 🟢 CREATE STUDENT
 export const createStudent = async (req, res) => {
   try {
@@ -177,3 +178,115 @@ export const getOfferLetters = async (req, res) => {
   } catch (error) {
     res.status(500).json({ message: error.message });
   }};
+  import Student from "../models/Student.js";
+import JobRole from "../models/JobRole.js";
+import RecruitmentRound from "../models/RecruitmentRound.js";
+import { sendEmail, templates } from "../utils/email.js";
+
+/* ========================================================
+   📄 Upload Resume
+   ======================================================== */
+export const uploadResume = async (req, res) => {
+  try {
+    const student = await Student.findById(req.user.id);
+    if (!req.file) return res.status(400).json({ message: "No file uploaded" });
+
+    student.resume_url = `/uploads/resumes/${req.file.filename}`;
+    await student.save();
+
+    res.status(200).json({
+      message: "Résumé uploaded successfully",
+      resume_url: student.resume_url,
+    });
+  } catch (error) {
+    res.status(500).json({ message: error.message });
+  }
+};
+
+/* ========================================================
+   🚀 Get All Active Drives
+   ======================================================== */
+export const getMyDrives = async (req, res) => {
+  try {
+    const student = await Student.findById(req.user.id);
+    const drives = await JobRole.find({
+      eligible_departments: student.department_id,
+      application_deadline: { $gte: new Date() },
+    }).populate("company", "company_name");
+
+    res.status(200).json(drives);
+  } catch (error) {
+    res.status(500).json({ message: error.message });
+  }
+};
+
+/* ========================================================
+   🟢 Enroll in a Drive
+   ======================================================== */
+export const enrollInDrive = async (req, res) => {
+  try {
+    const studentId = req.user.id;
+    const { jobId } = req.params;
+
+    const job = await JobRole.findById(jobId);
+    if (!job) return res.status(404).json({ message: "Job not found" });
+
+    // Check eligibility
+    const student = await Student.findById(studentId);
+    if (!job.eligible_departments.includes(student.department_id)) {
+      return res.status(403).json({ message: "Not eligible for this drive" });
+    }
+
+    // Register student in the first recruitment round
+    const firstRound = await RecruitmentRound.findOne({ job_role: jobId });
+    if (firstRound) {
+      firstRound.candidates.push({ student: studentId, status: "Enrolled" });
+      await firstRound.save();
+    }
+
+    // Optional email confirmation
+    sendEmail({
+      to: student.email,
+      ...templates.driveEnrollment({
+        studentName: `${student.first_name} ${student.last_name}`,
+        jobRole: job.job_role,
+        company: job.company.company_name,
+        roundUrl: `${process.env.FRONTEND_URL}/student/my-drives/${job._id}`,
+      }),
+    });
+
+    res.status(200).json({ message: "Enrolled successfully", job });
+  } catch (error) {
+    res.status(500).json({ message: error.message });
+  }
+};
+
+/* ========================================================
+   📊 Get Drive Status / Round Results
+   ======================================================== */
+export const getMyDriveStatus = async (req, res) => {
+  try {
+    const studentId = req.user.id;
+    const { jobId } = req.params;
+
+    const rounds = await RecruitmentRound.find({ job_role: jobId }).populate(
+      "candidates.student",
+      "first_name last_name email"
+    );
+
+    const statusList = rounds.map((r) => {
+      const match = r.candidates.find(
+        (c) => c.student._id.toString() === studentId
+      );
+      return {
+        round_name: r.round_name,
+        status: match?.status || "Not Participated",
+        remarks: match?.remarks || "-",
+      };
+    });
+
+    res.status(200).json(statusList);
+  } catch (error) {
+    res.status(500).json({ message: error.message });
+  }
+};
