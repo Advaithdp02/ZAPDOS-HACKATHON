@@ -10,38 +10,38 @@ import axiosClient from "../axiosClient";
 
 const CreateJobRole = () => {
   const [formData, setFormData] = useState({
-  job_role: "",
-  job_description: "",
-  job_location: "",
-  job_skills: "",
-  employment_type: "",
-  package_lpa: "",
-  eligible_departments: [], // ✅ must be array, not string
-  company: "",
-  min_cgpa: "",
-  backlog_allowed: "",
-  contact_person: "",
-  contact_email: "",
-  contact_phone: "",
-  drive_date: "",
-  application_deadline: "",
-});
+    job_role: "",
+    job_description: "",
+    job_location: "",
+    job_skills: "",
+    employment_type: "",
+    package_lpa: "",
+    eligible_departments: [], // ✅ must be array, not string
+    company: "",
+    min_cgpa: "",
+    backlog_allowed: "",
+    contact_person: "",
+    contact_email: "",
+    contact_phone: "",
+    drive_date: "",
+    application_deadline: "",
+  });
 
   const [companies, setCompanies] = useState([]);
   const [loading, setLoading] = useState(false);
   const [departments, setDepartments] = useState([]);
 
-useEffect(() => {
-  const fetchDepartments = async () => {
-    try {
-      const { data } = await axiosClient.get("/department");
-      setDepartments(data || []);
-    } catch (error) {
-      toast.error("Failed to fetch departments");
-    }
-  };
-  fetchDepartments();
-}, []);
+  useEffect(() => {
+    const fetchDepartments = async () => {
+      try {
+        const { data } = await axiosClient.get("/department");
+        setDepartments(data || []);
+      } catch (error) {
+        toast.error("Failed to fetch departments");
+      }
+    };
+    fetchDepartments();
+  }, []);
 
   // Fetch companies to populate dropdown
   useEffect(() => {
@@ -60,52 +60,54 @@ useEffect(() => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
- const handleSubmit = async (e) => {
-  e.preventDefault();
-  setLoading(true);
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    setLoading(true);
 
-  try {
-    const payload = {
-      ...formData,
-      job_skills: formData.job_skills
-        ? formData.job_skills.split(",").map((s) => s.trim()).filter(Boolean)
-        : [],
-      eligible_departments: Array.isArray(formData.eligible_departments)
-        ? formData.eligible_departments
-        : [],
-    };
+    try {
+      const payload = {
+        ...formData,
+        job_skills: formData.job_skills
+          ? formData.job_skills
+              .split(",")
+              .map((s) => s.trim())
+              .filter(Boolean)
+          : [],
+        eligible_departments: Array.isArray(formData.eligible_departments)
+          ? formData.eligible_departments
+          : [],
+      };
 
-    console.log("Submitting job payload:", payload); // <--- inspect this in browser console
+      console.log("Submitting job payload:", payload); // <--- inspect this in browser console
 
-    // make sure this path matches your backend mounting (use /api/jobs if backend uses app.use("/api/jobs", ...))
-    const { data } = await axiosClient.post("/jobs", payload);
+      // make sure this path matches your backend mounting (use /api/jobs if backend uses app.use("/api/jobs", ...))
+      const { data } = await axiosClient.post("/jobs", payload);
 
-    toast.success(data.message || "Job role created successfully!");
-    setFormData({
-      job_role: "",
-      job_description: "",
-      job_location: "",
-      job_skills: "",
-      employment_type: "",
-      package_lpa: "",
-      eligible_departments: [], // reset as array!
-      company: "",
-      min_cgpa: "",
-      backlog_allowed: "",
-      contact_person: "",
-      contact_email: "",
-      contact_phone: "",
-      drive_date: "",
-      application_deadline: "",
-    });
-  } catch (err) {
-    console.error("Submit error:", err.response ?? err);
-    toast.error(err.response?.data?.message || err.message);
-  } finally {
-    setLoading(false);
-  }
-};
-
+      toast.success(data.message || "Job role created successfully!");
+      setFormData({
+        job_role: "",
+        job_description: "",
+        job_location: "",
+        job_skills: "",
+        employment_type: "",
+        package_lpa: "",
+        eligible_departments: [], // reset as array!
+        company: "",
+        min_cgpa: "",
+        backlog_allowed: "",
+        contact_person: "",
+        contact_email: "",
+        contact_phone: "",
+        drive_date: "",
+        application_deadline: "",
+      });
+    } catch (err) {
+      console.error("Submit error:", err.response ?? err);
+      toast.error(err.response?.data?.message || err.message);
+    } finally {
+      setLoading(false);
+    }
+  };
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-gray-50 to-gray-100 flex items-center justify-center py-10 px-4">
@@ -152,23 +154,22 @@ useEffect(() => {
                 />
               </div>
               <div>
-  <Label htmlFor="employment_type">Employment Type</Label>
-  <select
-    id="employment_type"
-    name="employment_type"
-    value={formData.employment_type}
-    onChange={handleChange}
-    className="w-full border rounded-lg p-2 focus:outline-none focus:ring-2 focus:ring-primary"
-    required
-  >
-    <option value="">Select Employment Type</option>
-    <option value="Full-time">Full-time</option>
-    <option value="Part-time">Part-time</option>
-    <option value="Internship">Internship</option>
-    <option value="Contract">Contract</option>
-  </select>
-</div>
-
+                <Label htmlFor="employment_type">Employment Type</Label>
+                <select
+                  id="employment_type"
+                  name="employment_type"
+                  value={formData.employment_type}
+                  onChange={handleChange}
+                  className="w-full border rounded-lg p-2 focus:outline-none focus:ring-2 focus:ring-primary"
+                  required
+                >
+                  <option value="">Select Employment Type</option>
+                  <option value="Full-time">Full-time</option>
+                  <option value="Part-time">Part-time</option>
+                  <option value="Internship">Internship</option>
+                  <option value="Contract">Contract</option>
+                </select>
+              </div>
             </div>
 
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
@@ -197,36 +198,36 @@ useEffect(() => {
             </div>
 
             <div>
-  <Label htmlFor="eligible_departments">Eligible Departments</Label>
-  <select
-  id="eligible_departments"
-  name="eligible_departments"
-  multiple
-  value={formData.eligible_departments}
-  onChange={(e) =>
-    setFormData({
-      ...formData,
-      eligible_departments: Array.from(
-        e.target.selectedOptions,
-        (option) => option.value
-      ),
-    })
-  }
-  className="w-full border rounded-lg p-2"
-  required
->
-  {departments.map((dept) => (
-    <option key={dept._id} value={dept._id}>
-      {dept.name}
-    </option>
-  ))}
-</select>
+              <Label htmlFor="eligible_departments">Eligible Departments</Label>
+              <select
+                id="eligible_departments"
+                name="eligible_departments"
+                multiple
+                value={formData.eligible_departments}
+                onChange={(e) =>
+                  setFormData({
+                    ...formData,
+                    eligible_departments: Array.from(
+                      e.target.selectedOptions,
+                      (option) => option.value
+                    ),
+                  })
+                }
+                className="w-full border rounded-lg p-2"
+                required
+              >
+                {departments.map((dept) => (
+                  <option key={dept._id} value={dept._id}>
+                    {dept.name}
+                  </option>
+                ))}
+              </select>
 
-  <p className="text-sm text-gray-500 mt-1">
-    Hold <kbd>Ctrl</kbd> (Windows) or <kbd>Cmd</kbd> (Mac) to select multiple.
-  </p>
-</div>
-
+              <p className="text-sm text-gray-500 mt-1">
+                Hold <kbd>Ctrl</kbd> (Windows) or <kbd>Cmd</kbd> (Mac) to select
+                multiple.
+              </p>
+            </div>
 
             <div>
               <Label htmlFor="job_skills">Required Skills</Label>
@@ -259,30 +260,31 @@ useEffect(() => {
             </div>
 
             <div>
-  <Label htmlFor="backlog_allowed">Backlogs Allowed</Label>
-  <select
-    id="backlog_allowed"
-    name="backlog_allowed"
-    value={formData.backlog_allowed}
-    onChange={(e) =>
-      setFormData({
-        ...formData,
-        backlog_allowed: e.target.value === "true", // ✅ convert to boolean
-      })
-    }
-    className="w-full border rounded-lg p-2"
-    required
-  >
-    <option value="">Select</option>
-    <option value="true">Yes</option>
-    <option value="false">No</option>
-  </select>
-</div>
-
+              <Label htmlFor="backlog_allowed">Backlogs Allowed</Label>
+              <select
+                id="backlog_allowed"
+                name="backlog_allowed"
+                value={formData.backlog_allowed}
+                onChange={(e) =>
+                  setFormData({
+                    ...formData,
+                    backlog_allowed: e.target.value === "true", // ✅ convert to boolean
+                  })
+                }
+                className="w-full border rounded-lg p-2"
+                required
+              >
+                <option value="">Select</option>
+                <option value="true">Yes</option>
+                <option value="false">No</option>
+              </select>
+            </div>
 
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
               <div>
-                <Label htmlFor="application_deadline">Application Deadline</Label>
+                <Label htmlFor="application_deadline">
+                  Application Deadline
+                </Label>
                 <Input
                   id="application_deadline"
                   name="application_deadline"

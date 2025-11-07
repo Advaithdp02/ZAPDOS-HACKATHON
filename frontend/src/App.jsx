@@ -4,6 +4,8 @@ import ForgotPassword from "./pages/ForgotPassword"
 import Register from "./pages/Register"
 import CreateCompany from "./components/CreateCompany"
 import CreateJobRole from "./components/CreateJobRole"
+import UpdateJobRole from "./components/UpdateJobRole"
+import UpdateCompany from "./components/UpdateCompany";
 import { Toaster } from "sonner";
 // import Home from "./pages/Home"
 
@@ -19,6 +21,9 @@ export default function App() {
         {/* <Route path="/home" element={<Home />} /> */}
         <Route path="/addCompany" element={<CreateCompany/>} />
         <Route path="/addJob" element={<CreateJobRole/>} />
+        <Route path="/jobs/:id" element={<UpdateJobRole />} />
+        <Route path="/company/update/:id" element={<UpdateCompany />} />
+
       </Routes>
     </BrowserRouter>
   )
