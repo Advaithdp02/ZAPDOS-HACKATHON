@@ -10,7 +10,8 @@ import {
   getMyDrives,
   getMyDriveStatus,
   getOfferLetters,
-  getEligibleStudents
+  getEligibleStudents,
+  getAppliedJobs
 } from "../controllers/studentController.js";
 
 import { authorizeRoles, studentProtect } from "../middleware/authMiddleware.js";
@@ -69,5 +70,6 @@ router.get("/", getAllStudents);
 router.get("/:id", getStudentById);
 router.put("/:id", updateStudent);
 router.delete("/:id", deleteStudent);
+router.get("/my-applied-jobs", studentProtect, getAppliedJobs);
 
 export default router;

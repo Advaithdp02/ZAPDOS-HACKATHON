@@ -232,16 +232,32 @@ export const enrollInDrive = async (req, res) => {
     const student = await Student.findById(studentId);
     if (!student) return res.status(404).json({ message: "Student not found" });
 
-    // Eligibility check
+    // ✅ Eligibility Check
     const eligibleDeptIds = job.eligible_departments.map(id => id.toString());
     if (!eligibleDeptIds.includes(student.department_id.toString())) {
       return res.status(403).json({ message: "Not eligible for this drive" });
     }
 
-    // Register student in the first round (or create if none)
+    // ✅ Check if already applied
+    const alreadyApplied = student.applied_jobs.some(
+      (a) => a.job_role.toString() === jobId
+    );
+    if (alreadyApplied) {
+      return res.status(400).json({ message: "Already applied for this drive" });
+    }
+
+    // ✅ Add to student's applied_jobs list
+    student.applied_jobs.push({
+      job_role: job._id,
+      company: job.company?._id,
+      applied_on: new Date(),
+      status: "Applied"
+    });
+    await student.save();
+
+    // ✅ Register student in the first round
     let firstRound = await RecruitmentRound.findOne({ job_role: jobId }).sort({ round_date: 1 });
     if (!firstRound) {
-      // Optionally create a default "Application" round
       firstRound = await RecruitmentRound.create({
         job_role: jobId,
         round_name: "Application",
@@ -249,14 +265,17 @@ export const enrollInDrive = async (req, res) => {
         created_by: req.user.id
       });
     }
-    // avoid duplicate enrollment
-    const already = firstRound.candidates.find(c => c.student.toString() === studentId);
-    if (!already) {
-      firstRound.candidates.push({ student: studentId, status: "Enrolled" });
+
+    const alreadyInRound = firstRound.candidates.find(
+      c => c.student.toString() === studentId
+    );
+
+    if (!alreadyInRound) {
+      firstRound.candidates.push({ student: studentId, status: "Applied" });
       await firstRound.save();
     }
 
-    // Send confirmation email (fire-and-forget)
+    // ✅ Send confirmation email
     const tpl = templates.driveEnrollment({
       studentName: `${student.first_name} ${student.last_name}`,
       jobRole: job.job_role,
@@ -271,6 +290,7 @@ export const enrollInDrive = async (req, res) => {
     res.status(500).json({ message: error.message });
   }
 };
+
 
 /* ========================================================
    📊 Get Drive Status / Round Results
@@ -342,3 +362,22 @@ export const getEligibleStudents = async (req, res) => {
   }
 };
 
+export const getAppliedJobs = async (req, res) => {
+  try {
+    const student = await Student.findById(req.user.id)
+      .populate({
+        path: "applied_jobs.job_role",
+        populate: { path: "company", select: "company_name" },
+        select: "job_role job_description package_lpa employment_type drive_date"
+      })
+      .lean();
+
+    if (!student.applied_jobs || student.applied_jobs.length === 0) {
+      return res.status(404).json({ message: "No jobs applied yet" });
+    }
+
+    res.status(200).json(student.applied_jobs);
+  } catch (error) {
+    res.status(500).json({ message: error.message });
+  }
+};

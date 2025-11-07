@@ -12,13 +12,26 @@ const candidateStatusSchema = new mongoose.Schema({
 
 const recruitmentRoundSchema = new mongoose.Schema({
   job_role: { type: mongoose.Schema.Types.ObjectId, ref: "JobRole", required: true },
-  round_name: { type: String, required: true }, // e.g. "Technical Interview"
+
+  // 🔹 Predefined rounds (hardcoded)
+  round_name: {
+    type: String,
+    enum: [
+      "Aptitude Test",
+      "Group Discussion",
+      "Technical Round 1",
+      "Technical Round 2",
+      "Technical Round 3",
+      "HR Interview"
+    ],
+    required: true
+  },
+
   round_date: { type: Date, required: true },
-  conducted_by: { type: String }, // e.g., "HR Team"
-  candidates: [candidateStatusSchema], // each student and their status
+  conducted_by: { type: String },
+  candidates: [candidateStatusSchema],
   created_by: { type: mongoose.Schema.Types.ObjectId, ref: "Login" },
   published: { type: Boolean, default: false }
-
 }, { timestamps: true });
 
 const RecruitmentRound = mongoose.model("RecruitmentRound", recruitmentRoundSchema);
