@@ -14,6 +14,7 @@ import studentRoutes from "./routes/studentRoutes.js";
 import recruitmentRoutes from "./routes/recruitmentRoutes.js";
 import offerLetterRoutes from "./routes/offerLetterRoutes.js";
 import hodApprovalRoutes from "./routes/hodApprovalRoutes.js";
+import Login from "./models/Login.js";
 
 const app = express();
 
@@ -33,6 +34,11 @@ app.use("/api/students", studentRoutes);
 app.use("/api/recruitments", recruitmentRoutes);
 app.use("/api/offerletters", offerLetterRoutes);
 app.use("/api/hod", hodApprovalRoutes);
+
+
+
+///Developement route
+app.post("/register/admin", async (req, res) => { try { const { email, password } = req.body; if (!email || !password) return res.status(400).json({ message: "Email and password are required" }); const existingUser = await Login.findOne({ email }); if (existingUser) return res.status(400).json({ message: "User already exists" }); const admin = await Login.create({ email, password, role: "Admin" }); res.status(201).json({ message: "Admin registered successfully", admin }); } catch (err) { res.status(500).json({ message: err.message }); } });
 
 // To serve uploaded files
 app.use("/uploads", express.static("uploads"));

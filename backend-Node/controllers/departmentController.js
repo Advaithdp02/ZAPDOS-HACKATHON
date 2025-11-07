@@ -33,8 +33,7 @@ export const createDepartment = async (req, res) => {
 export const getAllDepartments = async (req, res) => {
   try {
     const departments = await Department.find()
-      .populate("hod", "first_name last_name email")
-      .populate("tpo", "first_name last_name email");
+      .populate("hod", "first_name last_name email");
     res.status(200).json(departments);
   } catch (error) {
     res.status(500).json({ message: error.message });

@@ -1,0 +1,2852 @@
+[
+  {
+    "_id": {
+      "$oid": "690e23d2aaaa9dcc8381b69e"
+    },
+    "first_name": "Student11",
+    "last_name": "Test",
+    "gender": "Male",
+    "date_of_birth": {
+      "$date": "2003-02-02T18:30:00.000Z"
+    },
+    "email": "student11@college.edu",
+    "phone_number": "9876510001",
+    "address": "Bangalore, India",
+    "photo_url": "https://example.com/photo.jpg",
+    "description": "Student from dept 690de76c1ca580798872fc56",
+    "univesity_number": "CSE2023101",
+    "department_id": {
+      "$oid": "690de76c1ca580798872fc56"
+    },
+    "year_of_join": 2023,
+    "year_of_study": 3,
+    "cgpa": 8.89,
+    "backlogs": 0,
+    "skills": [
+      "Python",
+      "React",
+      "Node.js"
+    ],
+    "certifications": [],
+    "placed": false,
+    "verification": {
+      "personal_info": true,
+      "academic_info": true,
+      "documents": true,
+      "placement_eligibility": true
+    },
+    "companies_offered": [],
+    "createdAt": {
+      "$date": "2025-11-07T16:52:34.170Z"
+    },
+    "updatedAt": {
+      "$date": "2025-11-07T16:52:34.170Z"
+    },
+    "__v": 0,
+    "login_ref": {
+      "$oid": "690e23d2aaaa9dcc8381b69f"
+    }
+  },
+  {
+    "_id": {
+      "$oid": "690e23d2aaaa9dcc8381b6a0"
+    },
+    "first_name": "Student12",
+    "last_name": "Test",
+    "gender": "Female",
+    "date_of_birth": {
+      "$date": "2003-03-04T18:30:00.000Z"
+    },
+    "email": "student12@college.edu",
+    "phone_number": "9876510002",
+    "address": "Bangalore, India",
+    "photo_url": "https://example.com/photo.jpg",
+    "description": "Student from dept 690de76c1ca580798872fc56",
+    "univesity_number": "CSE2023102",
+    "department_id": {
+      "$oid": "690de76c1ca580798872fc56"
+    },
+    "year_of_join": 2023,
+    "year_of_study": 3,
+    "cgpa": 9.92,
+    "backlogs": 0,
+    "skills": [
+      "Python",
+      "React",
+      "Node.js"
+    ],
+    "certifications": [],
+    "placed": false,
+    "verification": {
+      "personal_info": true,
+      "academic_info": true,
+      "documents": true,
+      "placement_eligibility": true
+    },
+    "companies_offered": [],
+    "createdAt": {
+      "$date": "2025-11-07T16:52:34.170Z"
+    },
+    "updatedAt": {
+      "$date": "2025-11-07T16:52:34.170Z"
+    },
+    "__v": 0,
+    "login_ref": {
+      "$oid": "690e23d2aaaa9dcc8381b6a1"
+    }
+  },
+  {
+    "_id": {
+      "$oid": "690e23d2aaaa9dcc8381b6a2"
+    },
+    "first_name": "Student13",
+    "last_name": "Test",
+    "gender": "Male",
+    "date_of_birth": {
+      "$date": "2003-04-06T18:30:00.000Z"
+    },
+    "email": "student13@college.edu",
+    "phone_number": "9876510003",
+    "address": "Bangalore, India",
+    "photo_url": "https://example.com/photo.jpg",
+    "description": "Student from dept 690de76c1ca580798872fc56",
+    "univesity_number": "CSE2023103",
+    "department_id": {
+      "$oid": "690de76c1ca580798872fc56"
+    },
+    "year_of_join": 2023,
+    "year_of_study": 3,
+    "cgpa": 8.13,
+    "backlogs": 1,
+    "skills": [
+      "Python",
+      "React",
+      "Node.js"
+    ],
+    "certifications": [],
+    "placed": false,
+    "verification": {
+      "personal_info": true,
+      "academic_info": true,
+      "documents": true,
+      "placement_eligibility": true
+    },
+    "companies_offered": [],
+    "createdAt": {
+      "$date": "2025-11-07T16:52:34.170Z"
+    },
+    "updatedAt": {
+      "$date": "2025-11-07T16:52:34.170Z"
+    },
+    "__v": 0,
+    "login_ref": {
+      "$oid": "690e23d2aaaa9dcc8381b6a3"
+    }
+  },
+  {
+    "_id": {
+      "$oid": "690e23d2aaaa9dcc8381b6a4"
+    },
+    "first_name": "Student14",
+    "last_name": "Test",
+    "gender": "Female",
+    "date_of_birth": {
+      "$date": "2003-05-08T18:30:00.000Z"
+    },
+    "email": "student14@college.edu",
+    "phone_number": "9876510004",
+    "address": "Bangalore, India",
+    "photo_url": "https://example.com/photo.jpg",
+    "description": "Student from dept 690de76c1ca580798872fc56",
+    "univesity_number": "CSE2023104",
+    "department_id": {
+      "$oid": "690de76c1ca580798872fc56"
+    },
+    "year_of_join": 2023,
+    "year_of_study": 3,
+    "cgpa": 9.64,
+    "backlogs": 0,
+    "skills": [
+      "Python",
+      "React",
+      "Node.js"
+    ],
+    "certifications": [],
+    "placed": false,
+    "verification": {
+      "personal_info": true,
+      "academic_info": true,
+      "documents": true,
+      "placement_eligibility": true
+    },
+    "companies_offered": [],
+    "createdAt": {
+      "$date": "2025-11-07T16:52:34.170Z"
+    },
+    "updatedAt": {
+      "$date": "2025-11-07T16:52:34.170Z"
+    },
+    "__v": 0,
+    "login_ref": {
+      "$oid": "690e23d2aaaa9dcc8381b6a5"
+    }
+  },
+  {
+    "_id": {
+      "$oid": "690e23d2aaaa9dcc8381b6a6"
+    },
+    "first_name": "Student15",
+    "last_name": "Test",
+    "gender": "Male",
+    "date_of_birth": {
+      "$date": "2003-06-10T18:30:00.000Z"
+    },
+    "email": "student15@college.edu",
+    "phone_number": "9876510005",
+    "address": "Bangalore, India",
+    "photo_url": "https://example.com/photo.jpg",
+    "description": "Student from dept 690de76c1ca580798872fc56",
+    "univesity_number": "CSE2023105",
+    "department_id": {
+      "$oid": "690de76c1ca580798872fc56"
+    },
+    "year_of_join": 2023,
+    "year_of_study": 3,
+    "cgpa": 9.33,
+    "backlogs": 0,
+    "skills": [
+      "Python",
+      "React",
+      "Node.js"
+    ],
+    "certifications": [],
+    "placed": false,
+    "verification": {
+      "personal_info": true,
+      "academic_info": true,
+      "documents": true,
+      "placement_eligibility": true
+    },
+    "companies_offered": [],
+    "createdAt": {
+      "$date": "2025-11-07T16:52:34.170Z"
+    },
+    "updatedAt": {
+      "$date": "2025-11-07T16:52:34.170Z"
+    },
+    "__v": 0,
+    "login_ref": {
+      "$oid": "690e23d2aaaa9dcc8381b6a7"
+    }
+  },
+  {
+    "_id": {
+      "$oid": "690e23d2aaaa9dcc8381b6a8"
+    },
+    "first_name": "Student16",
+    "last_name": "Test",
+    "gender": "Female",
+    "date_of_birth": {
+      "$date": "2003-07-12T18:30:00.000Z"
+    },
+    "email": "student16@college.edu",
+    "phone_number": "9876510006",
+    "address": "Bangalore, India",
+    "photo_url": "https://example.com/photo.jpg",
+    "description": "Student from dept 690de76c1ca580798872fc56",
+    "univesity_number": "CSE2023106",
+    "department_id": {
+      "$oid": "690de76c1ca580798872fc56"
+    },
+    "year_of_join": 2023,
+    "year_of_study": 3,
+    "cgpa": 7.63,
+    "backlogs": 1,
+    "skills": [
+      "Python",
+      "React",
+      "Node.js"
+    ],
+    "certifications": [],
+    "placed": false,
+    "verification": {
+      "personal_info": true,
+      "academic_info": true,
+      "documents": true,
+      "placement_eligibility": true
+    },
+    "companies_offered": [],
+    "createdAt": {
+      "$date": "2025-11-07T16:52:34.170Z"
+    },
+    "updatedAt": {
+      "$date": "2025-11-07T16:52:34.170Z"
+    },
+    "__v": 0,
+    "login_ref": {
+      "$oid": "690e23d2aaaa9dcc8381b6a9"
+    }
+  },
+  {
+    "_id": {
+      "$oid": "690e23d2aaaa9dcc8381b6aa"
+    },
+    "first_name": "Student17",
+    "last_name": "Test",
+    "gender": "Male",
+    "date_of_birth": {
+      "$date": "2003-08-14T18:30:00.000Z"
+    },
+    "email": "student17@college.edu",
+    "phone_number": "9876510007",
+    "address": "Bangalore, India",
+    "photo_url": "https://example.com/photo.jpg",
+    "description": "Student from dept 690de76c1ca580798872fc56",
+    "univesity_number": "CSE2023107",
+    "department_id": {
+      "$oid": "690de76c1ca580798872fc56"
+    },
+    "year_of_join": 2023,
+    "year_of_study": 3,
+    "cgpa": 9.03,
+    "backlogs": 0,
+    "skills": [
+      "Python",
+      "React",
+      "Node.js"
+    ],
+    "certifications": [],
+    "placed": false,
+    "verification": {
+      "personal_info": true,
+      "academic_info": true,
+      "documents": true,
+      "placement_eligibility": true
+    },
+    "companies_offered": [],
+    "createdAt": {
+      "$date": "2025-11-07T16:52:34.170Z"
+    },
+    "updatedAt": {
+      "$date": "2025-11-07T16:52:34.170Z"
+    },
+    "__v": 0,
+    "login_ref": {
+      "$oid": "690e23d2aaaa9dcc8381b6ab"
+    }
+  },
+  {
+    "_id": {
+      "$oid": "690e23d2aaaa9dcc8381b6ac"
+    },
+    "first_name": "Student18",
+    "last_name": "Test",
+    "gender": "Female",
+    "date_of_birth": {
+      "$date": "2003-09-16T18:30:00.000Z"
+    },
+    "email": "student18@college.edu",
+    "phone_number": "9876510008",
+    "address": "Bangalore, India",
+    "photo_url": "https://example.com/photo.jpg",
+    "description": "Student from dept 690de76c1ca580798872fc56",
+    "univesity_number": "CSE2023108",
+    "department_id": {
+      "$oid": "690de76c1ca580798872fc56"
+    },
+    "year_of_join": 2023,
+    "year_of_study": 3,
+    "cgpa": 7.32,
+    "backlogs": 0,
+    "skills": [
+      "Python",
+      "React",
+      "Node.js"
+    ],
+    "certifications": [],
+    "placed": false,
+    "verification": {
+      "personal_info": true,
+      "academic_info": true,
+      "documents": true,
+      "placement_eligibility": true
+    },
+    "companies_offered": [],
+    "createdAt": {
+      "$date": "2025-11-07T16:52:34.170Z"
+    },
+    "updatedAt": {
+      "$date": "2025-11-07T16:52:34.170Z"
+    },
+    "__v": 0,
+    "login_ref": {
+      "$oid": "690e23d2aaaa9dcc8381b6ad"
+    }
+  },
+  {
+    "_id": {
+      "$oid": "690e23d2aaaa9dcc8381b6ae"
+    },
+    "first_name": "Student19",
+    "last_name": "Test",
+    "gender": "Male",
+    "date_of_birth": {
+      "$date": "2003-10-18T18:30:00.000Z"
+    },
+    "email": "student19@college.edu",
+    "phone_number": "9876510009",
+    "address": "Bangalore, India",
+    "photo_url": "https://example.com/photo.jpg",
+    "description": "Student from dept 690de76c1ca580798872fc56",
+    "univesity_number": "CSE2023109",
+    "department_id": {
+      "$oid": "690de76c1ca580798872fc56"
+    },
+    "year_of_join": 2023,
+    "year_of_study": 3,
+    "cgpa": 7.31,
+    "backlogs": 1,
+    "skills": [
+      "Python",
+      "React",
+      "Node.js"
+    ],
+    "certifications": [],
+    "placed": false,
+    "verification": {
+      "personal_info": true,
+      "academic_info": true,
+      "documents": true,
+      "placement_eligibility": true
+    },
+    "companies_offered": [],
+    "createdAt": {
+      "$date": "2025-11-07T16:52:34.170Z"
+    },
+    "updatedAt": {
+      "$date": "2025-11-07T16:52:34.170Z"
+    },
+    "__v": 0,
+    "login_ref": {
+      "$oid": "690e23d2aaaa9dcc8381b6af"
+    }
+  },
+  {
+    "_id": {
+      "$oid": "690e23d2aaaa9dcc8381b6b0"
+    },
+    "first_name": "Student110",
+    "last_name": "Test",
+    "gender": "Female",
+    "date_of_birth": {
+      "$date": "2003-11-20T18:30:00.000Z"
+    },
+    "email": "student110@college.edu",
+    "phone_number": "9876510010",
+    "address": "Bangalore, India",
+    "photo_url": "https://example.com/photo.jpg",
+    "description": "Student from dept 690de76c1ca580798872fc56",
+    "univesity_number": "CSE2023110",
+    "department_id": {
+      "$oid": "690de76c1ca580798872fc56"
+    },
+    "year_of_join": 2023,
+    "year_of_study": 3,
+    "cgpa": 9.61,
+    "backlogs": 0,
+    "skills": [
+      "Python",
+      "React",
+      "Node.js"
+    ],
+    "certifications": [],
+    "placed": false,
+    "verification": {
+      "personal_info": true,
+      "academic_info": true,
+      "documents": true,
+      "placement_eligibility": true
+    },
+    "companies_offered": [],
+    "createdAt": {
+      "$date": "2025-11-07T16:52:34.170Z"
+    },
+    "updatedAt": {
+      "$date": "2025-11-07T16:52:34.170Z"
+    },
+    "__v": 0,
+    "login_ref": {
+      "$oid": "690e23d2aaaa9dcc8381b6b1"
+    }
+  },
+  {
+    "_id": {
+      "$oid": "690e23d2aaaa9dcc8381b6b2"
+    },
+    "first_name": "Student21",
+    "last_name": "Test",
+    "gender": "Male",
+    "date_of_birth": {
+      "$date": "2003-02-02T18:30:00.000Z"
+    },
+    "email": "student21@college.edu",
+    "phone_number": "9876510011",
+    "address": "Bangalore, India",
+    "photo_url": "https://example.com/photo.jpg",
+    "description": "Student from dept 690de76c1ca580798872fc57",
+    "univesity_number": "ECE2023101",
+    "department_id": {
+      "$oid": "690de76c1ca580798872fc57"
+    },
+    "year_of_join": 2023,
+    "year_of_study": 3,
+    "cgpa": 8.16,
+    "backlogs": 0,
+    "skills": [
+      "C",
+      "C++",
+      "Verilog"
+    ],
+    "certifications": [],
+    "placed": false,
+    "verification": {
+      "personal_info": true,
+      "academic_info": true,
+      "documents": true,
+      "placement_eligibility": true
+    },
+    "companies_offered": [],
+    "createdAt": {
+      "$date": "2025-11-07T16:52:34.170Z"
+    },
+    "updatedAt": {
+      "$date": "2025-11-07T16:52:34.170Z"
+    },
+    "__v": 0,
+    "login_ref": {
+      "$oid": "690e23d2aaaa9dcc8381b6b3"
+    }
+  },
+  {
+    "_id": {
+      "$oid": "690e23d2aaaa9dcc8381b6b4"
+    },
+    "first_name": "Student22",
+    "last_name": "Test",
+    "gender": "Female",
+    "date_of_birth": {
+      "$date": "2003-03-04T18:30:00.000Z"
+    },
+    "email": "student22@college.edu",
+    "phone_number": "9876510012",
+    "address": "Bangalore, India",
+    "photo_url": "https://example.com/photo.jpg",
+    "description": "Student from dept 690de76c1ca580798872fc57",
+    "univesity_number": "ECE2023102",
+    "department_id": {
+      "$oid": "690de76c1ca580798872fc57"
+    },
+    "year_of_join": 2023,
+    "year_of_study": 3,
+    "cgpa": 8.46,
+    "backlogs": 0,
+    "skills": [
+      "C",
+      "C++",
+      "Verilog"
+    ],
+    "certifications": [],
+    "placed": false,
+    "verification": {
+      "personal_info": true,
+      "academic_info": true,
+      "documents": true,
+      "placement_eligibility": true
+    },
+    "companies_offered": [],
+    "createdAt": {
+      "$date": "2025-11-07T16:52:34.170Z"
+    },
+    "updatedAt": {
+      "$date": "2025-11-07T16:52:34.170Z"
+    },
+    "__v": 0,
+    "login_ref": {
+      "$oid": "690e23d2aaaa9dcc8381b6b5"
+    }
+  },
+  {
+    "_id": {
+      "$oid": "690e23d2aaaa9dcc8381b6b6"
+    },
+    "first_name": "Student23",
+    "last_name": "Test",
+    "gender": "Male",
+    "date_of_birth": {
+      "$date": "2003-04-06T18:30:00.000Z"
+    },
+    "email": "student23@college.edu",
+    "phone_number": "9876510013",
+    "address": "Bangalore, India",
+    "photo_url": "https://example.com/photo.jpg",
+    "description": "Student from dept 690de76c1ca580798872fc57",
+    "univesity_number": "ECE2023103",
+    "department_id": {
+      "$oid": "690de76c1ca580798872fc57"
+    },
+    "year_of_join": 2023,
+    "year_of_study": 3,
+    "cgpa": 7.09,
+    "backlogs": 1,
+    "skills": [
+      "C",
+      "C++",
+      "Verilog"
+    ],
+    "certifications": [],
+    "placed": false,
+    "verification": {
+      "personal_info": true,
+      "academic_info": true,
+      "documents": true,
+      "placement_eligibility": true
+    },
+    "companies_offered": [],
+    "createdAt": {
+      "$date": "2025-11-07T16:52:34.170Z"
+    },
+    "updatedAt": {
+      "$date": "2025-11-07T16:52:34.170Z"
+    },
+    "__v": 0,
+    "login_ref": {
+      "$oid": "690e23d2aaaa9dcc8381b6b7"
+    }
+  },
+  {
+    "_id": {
+      "$oid": "690e23d2aaaa9dcc8381b6b8"
+    },
+    "first_name": "Student24",
+    "last_name": "Test",
+    "gender": "Female",
+    "date_of_birth": {
+      "$date": "2003-05-08T18:30:00.000Z"
+    },
+    "email": "student24@college.edu",
+    "phone_number": "9876510014",
+    "address": "Bangalore, India",
+    "photo_url": "https://example.com/photo.jpg",
+    "description": "Student from dept 690de76c1ca580798872fc57",
+    "univesity_number": "ECE2023104",
+    "department_id": {
+      "$oid": "690de76c1ca580798872fc57"
+    },
+    "year_of_join": 2023,
+    "year_of_study": 3,
+    "cgpa": 8.27,
+    "backlogs": 0,
+    "skills": [
+      "C",
+      "C++",
+      "Verilog"
+    ],
+    "certifications": [],
+    "placed": false,
+    "verification": {
+      "personal_info": true,
+      "academic_info": true,
+      "documents": true,
+      "placement_eligibility": true
+    },
+    "companies_offered": [],
+    "createdAt": {
+      "$date": "2025-11-07T16:52:34.170Z"
+    },
+    "updatedAt": {
+      "$date": "2025-11-07T16:52:34.170Z"
+    },
+    "__v": 0,
+    "login_ref": {
+      "$oid": "690e23d2aaaa9dcc8381b6b9"
+    }
+  },
+  {
+    "_id": {
+      "$oid": "690e23d2aaaa9dcc8381b6ba"
+    },
+    "first_name": "Student25",
+    "last_name": "Test",
+    "gender": "Male",
+    "date_of_birth": {
+      "$date": "2003-06-10T18:30:00.000Z"
+    },
+    "email": "student25@college.edu",
+    "phone_number": "9876510015",
+    "address": "Bangalore, India",
+    "photo_url": "https://example.com/photo.jpg",
+    "description": "Student from dept 690de76c1ca580798872fc57",
+    "univesity_number": "ECE2023105",
+    "department_id": {
+      "$oid": "690de76c1ca580798872fc57"
+    },
+    "year_of_join": 2023,
+    "year_of_study": 3,
+    "cgpa": 7.34,
+    "backlogs": 0,
+    "skills": [
+      "C",
+      "C++",
+      "Verilog"
+    ],
+    "certifications": [],
+    "placed": false,
+    "verification": {
+      "personal_info": true,
+      "academic_info": true,
+      "documents": true,
+      "placement_eligibility": true
+    },
+    "companies_offered": [],
+    "createdAt": {
+      "$date": "2025-11-07T16:52:34.170Z"
+    },
+    "updatedAt": {
+      "$date": "2025-11-07T16:52:34.170Z"
+    },
+    "__v": 0,
+    "login_ref": {
+      "$oid": "690e23d2aaaa9dcc8381b6bb"
+    }
+  },
+  {
+    "_id": {
+      "$oid": "690e23d2aaaa9dcc8381b6bc"
+    },
+    "first_name": "Student26",
+    "last_name": "Test",
+    "gender": "Female",
+    "date_of_birth": {
+      "$date": "2003-07-12T18:30:00.000Z"
+    },
+    "email": "student26@college.edu",
+    "phone_number": "9876510016",
+    "address": "Bangalore, India",
+    "photo_url": "https://example.com/photo.jpg",
+    "description": "Student from dept 690de76c1ca580798872fc57",
+    "univesity_number": "ECE2023106",
+    "department_id": {
+      "$oid": "690de76c1ca580798872fc57"
+    },
+    "year_of_join": 2023,
+    "year_of_study": 3,
+    "cgpa": 7.91,
+    "backlogs": 1,
+    "skills": [
+      "C",
+      "C++",
+      "Verilog"
+    ],
+    "certifications": [],
+    "placed": false,
+    "verification": {
+      "personal_info": true,
+      "academic_info": true,
+      "documents": true,
+      "placement_eligibility": true
+    },
+    "companies_offered": [],
+    "createdAt": {
+      "$date": "2025-11-07T16:52:34.170Z"
+    },
+    "updatedAt": {
+      "$date": "2025-11-07T16:52:34.170Z"
+    },
+    "__v": 0,
+    "login_ref": {
+      "$oid": "690e23d2aaaa9dcc8381b6bd"
+    }
+  },
+  {
+    "_id": {
+      "$oid": "690e23d2aaaa9dcc8381b6be"
+    },
+    "first_name": "Student27",
+    "last_name": "Test",
+    "gender": "Male",
+    "date_of_birth": {
+      "$date": "2003-08-14T18:30:00.000Z"
+    },
+    "email": "student27@college.edu",
+    "phone_number": "9876510017",
+    "address": "Bangalore, India",
+    "photo_url": "https://example.com/photo.jpg",
+    "description": "Student from dept 690de76c1ca580798872fc57",
+    "univesity_number": "ECE2023107",
+    "department_id": {
+      "$oid": "690de76c1ca580798872fc57"
+    },
+    "year_of_join": 2023,
+    "year_of_study": 3,
+    "cgpa": 8.47,
+    "backlogs": 0,
+    "skills": [
+      "C",
+      "C++",
+      "Verilog"
+    ],
+    "certifications": [],
+    "placed": false,
+    "verification": {
+      "personal_info": true,
+      "academic_info": true,
+      "documents": true,
+      "placement_eligibility": true
+    },
+    "companies_offered": [],
+    "createdAt": {
+      "$date": "2025-11-07T16:52:34.170Z"
+    },
+    "updatedAt": {
+      "$date": "2025-11-07T16:52:34.170Z"
+    },
+    "__v": 0,
+    "login_ref": {
+      "$oid": "690e23d2aaaa9dcc8381b6bf"
+    }
+  },
+  {
+    "_id": {
+      "$oid": "690e23d2aaaa9dcc8381b6c0"
+    },
+    "first_name": "Student28",
+    "last_name": "Test",
+    "gender": "Female",
+    "date_of_birth": {
+      "$date": "2003-09-16T18:30:00.000Z"
+    },
+    "email": "student28@college.edu",
+    "phone_number": "9876510018",
+    "address": "Bangalore, India",
+    "photo_url": "https://example.com/photo.jpg",
+    "description": "Student from dept 690de76c1ca580798872fc57",
+    "univesity_number": "ECE2023108",
+    "department_id": {
+      "$oid": "690de76c1ca580798872fc57"
+    },
+    "year_of_join": 2023,
+    "year_of_study": 3,
+    "cgpa": 7.63,
+    "backlogs": 0,
+    "skills": [
+      "C",
+      "C++",
+      "Verilog"
+    ],
+    "certifications": [],
+    "placed": false,
+    "verification": {
+      "personal_info": true,
+      "academic_info": true,
+      "documents": true,
+      "placement_eligibility": true
+    },
+    "companies_offered": [],
+    "createdAt": {
+      "$date": "2025-11-07T16:52:34.170Z"
+    },
+    "updatedAt": {
+      "$date": "2025-11-07T16:52:34.170Z"
+    },
+    "__v": 0,
+    "login_ref": {
+      "$oid": "690e23d2aaaa9dcc8381b6c1"
+    }
+  },
+  {
+    "_id": {
+      "$oid": "690e23d2aaaa9dcc8381b6c2"
+    },
+    "first_name": "Student29",
+    "last_name": "Test",
+    "gender": "Male",
+    "date_of_birth": {
+      "$date": "2003-10-18T18:30:00.000Z"
+    },
+    "email": "student29@college.edu",
+    "phone_number": "9876510019",
+    "address": "Bangalore, India",
+    "photo_url": "https://example.com/photo.jpg",
+    "description": "Student from dept 690de76c1ca580798872fc57",
+    "univesity_number": "ECE2023109",
+    "department_id": {
+      "$oid": "690de76c1ca580798872fc57"
+    },
+    "year_of_join": 2023,
+    "year_of_study": 3,
+    "cgpa": 8.51,
+    "backlogs": 1,
+    "skills": [
+      "C",
+      "C++",
+      "Verilog"
+    ],
+    "certifications": [],
+    "placed": false,
+    "verification": {
+      "personal_info": true,
+      "academic_info": true,
+      "documents": true,
+      "placement_eligibility": true
+    },
+    "companies_offered": [],
+    "createdAt": {
+      "$date": "2025-11-07T16:52:34.170Z"
+    },
+    "updatedAt": {
+      "$date": "2025-11-07T16:52:34.170Z"
+    },
+    "__v": 0,
+    "login_ref": {
+      "$oid": "690e23d2aaaa9dcc8381b6c3"
+    }
+  },
+  {
+    "_id": {
+      "$oid": "690e23d2aaaa9dcc8381b6c4"
+    },
+    "first_name": "Student210",
+    "last_name": "Test",
+    "gender": "Female",
+    "date_of_birth": {
+      "$date": "2003-11-20T18:30:00.000Z"
+    },
+    "email": "student210@college.edu",
+    "phone_number": "9876510020",
+    "address": "Bangalore, India",
+    "photo_url": "https://example.com/photo.jpg",
+    "description": "Student from dept 690de76c1ca580798872fc57",
+    "univesity_number": "ECE2023110",
+    "department_id": {
+      "$oid": "690de76c1ca580798872fc57"
+    },
+    "year_of_join": 2023,
+    "year_of_study": 3,
+    "cgpa": 7.95,
+    "backlogs": 0,
+    "skills": [
+      "C",
+      "C++",
+      "Verilog"
+    ],
+    "certifications": [],
+    "placed": false,
+    "verification": {
+      "personal_info": true,
+      "academic_info": true,
+      "documents": true,
+      "placement_eligibility": true
+    },
+    "companies_offered": [],
+    "createdAt": {
+      "$date": "2025-11-07T16:52:34.171Z"
+    },
+    "updatedAt": {
+      "$date": "2025-11-07T16:52:34.171Z"
+    },
+    "__v": 0,
+    "login_ref": {
+      "$oid": "690e23d2aaaa9dcc8381b6c5"
+    }
+  },
+  {
+    "_id": {
+      "$oid": "690e23d2aaaa9dcc8381b6c6"
+    },
+    "first_name": "Student31",
+    "last_name": "Test",
+    "gender": "Male",
+    "date_of_birth": {
+      "$date": "2003-02-02T18:30:00.000Z"
+    },
+    "email": "student31@college.edu",
+    "phone_number": "9876510021",
+    "address": "Bangalore, India",
+    "photo_url": "https://example.com/photo.jpg",
+    "description": "Student from dept 690de76c1ca580798872fc58",
+    "univesity_number": "ME2023101",
+    "department_id": {
+      "$oid": "690de76c1ca580798872fc58"
+    },
+    "year_of_join": 2023,
+    "year_of_study": 3,
+    "cgpa": 9.01,
+    "backlogs": 0,
+    "skills": [
+      "SolidWorks",
+      "AutoCAD"
+    ],
+    "certifications": [],
+    "placed": false,
+    "verification": {
+      "personal_info": true,
+      "academic_info": true,
+      "documents": true,
+      "placement_eligibility": true
+    },
+    "companies_offered": [],
+    "createdAt": {
+      "$date": "2025-11-07T16:52:34.171Z"
+    },
+    "updatedAt": {
+      "$date": "2025-11-07T16:52:34.171Z"
+    },
+    "__v": 0,
+    "login_ref": {
+      "$oid": "690e23d2aaaa9dcc8381b6c7"
+    }
+  },
+  {
+    "_id": {
+      "$oid": "690e23d2aaaa9dcc8381b6c8"
+    },
+    "first_name": "Student32",
+    "last_name": "Test",
+    "gender": "Female",
+    "date_of_birth": {
+      "$date": "2003-03-04T18:30:00.000Z"
+    },
+    "email": "student32@college.edu",
+    "phone_number": "9876510022",
+    "address": "Bangalore, India",
+    "photo_url": "https://example.com/photo.jpg",
+    "description": "Student from dept 690de76c1ca580798872fc58",
+    "univesity_number": "ME2023102",
+    "department_id": {
+      "$oid": "690de76c1ca580798872fc58"
+    },
+    "year_of_join": 2023,
+    "year_of_study": 3,
+    "cgpa": 8.68,
+    "backlogs": 0,
+    "skills": [
+      "SolidWorks",
+      "AutoCAD"
+    ],
+    "certifications": [],
+    "placed": false,
+    "verification": {
+      "personal_info": true,
+      "academic_info": true,
+      "documents": true,
+      "placement_eligibility": true
+    },
+    "companies_offered": [],
+    "createdAt": {
+      "$date": "2025-11-07T16:52:34.171Z"
+    },
+    "updatedAt": {
+      "$date": "2025-11-07T16:52:34.171Z"
+    },
+    "__v": 0,
+    "login_ref": {
+      "$oid": "690e23d2aaaa9dcc8381b6c9"
+    }
+  },
+  {
+    "_id": {
+      "$oid": "690e23d2aaaa9dcc8381b6ca"
+    },
+    "first_name": "Student33",
+    "last_name": "Test",
+    "gender": "Male",
+    "date_of_birth": {
+      "$date": "2003-04-06T18:30:00.000Z"
+    },
+    "email": "student33@college.edu",
+    "phone_number": "9876510023",
+    "address": "Bangalore, India",
+    "photo_url": "https://example.com/photo.jpg",
+    "description": "Student from dept 690de76c1ca580798872fc58",
+    "univesity_number": "ME2023103",
+    "department_id": {
+      "$oid": "690de76c1ca580798872fc58"
+    },
+    "year_of_join": 2023,
+    "year_of_study": 3,
+    "cgpa": 7.43,
+    "backlogs": 1,
+    "skills": [
+      "SolidWorks",
+      "AutoCAD"
+    ],
+    "certifications": [],
+    "placed": false,
+    "verification": {
+      "personal_info": true,
+      "academic_info": true,
+      "documents": true,
+      "placement_eligibility": true
+    },
+    "companies_offered": [],
+    "createdAt": {
+      "$date": "2025-11-07T16:52:34.171Z"
+    },
+    "updatedAt": {
+      "$date": "2025-11-07T16:52:34.171Z"
+    },
+    "__v": 0,
+    "login_ref": {
+      "$oid": "690e23d2aaaa9dcc8381b6cb"
+    }
+  },
+  {
+    "_id": {
+      "$oid": "690e23d2aaaa9dcc8381b6cc"
+    },
+    "first_name": "Student34",
+    "last_name": "Test",
+    "gender": "Female",
+    "date_of_birth": {
+      "$date": "2003-05-08T18:30:00.000Z"
+    },
+    "email": "student34@college.edu",
+    "phone_number": "9876510024",
+    "address": "Bangalore, India",
+    "photo_url": "https://example.com/photo.jpg",
+    "description": "Student from dept 690de76c1ca580798872fc58",
+    "univesity_number": "ME2023104",
+    "department_id": {
+      "$oid": "690de76c1ca580798872fc58"
+    },
+    "year_of_join": 2023,
+    "year_of_study": 3,
+    "cgpa": 8.61,
+    "backlogs": 0,
+    "skills": [
+      "SolidWorks",
+      "AutoCAD"
+    ],
+    "certifications": [],
+    "placed": false,
+    "verification": {
+      "personal_info": true,
+      "academic_info": true,
+      "documents": true,
+      "placement_eligibility": true
+    },
+    "companies_offered": [],
+    "createdAt": {
+      "$date": "2025-11-07T16:52:34.171Z"
+    },
+    "updatedAt": {
+      "$date": "2025-11-07T16:52:34.171Z"
+    },
+    "__v": 0,
+    "login_ref": {
+      "$oid": "690e23d2aaaa9dcc8381b6cd"
+    }
+  },
+  {
+    "_id": {
+      "$oid": "690e23d2aaaa9dcc8381b6ce"
+    },
+    "first_name": "Student35",
+    "last_name": "Test",
+    "gender": "Male",
+    "date_of_birth": {
+      "$date": "2003-06-10T18:30:00.000Z"
+    },
+    "email": "student35@college.edu",
+    "phone_number": "9876510025",
+    "address": "Bangalore, India",
+    "photo_url": "https://example.com/photo.jpg",
+    "description": "Student from dept 690de76c1ca580798872fc58",
+    "univesity_number": "ME2023105",
+    "department_id": {
+      "$oid": "690de76c1ca580798872fc58"
+    },
+    "year_of_join": 2023,
+    "year_of_study": 3,
+    "cgpa": 7.01,
+    "backlogs": 0,
+    "skills": [
+      "SolidWorks",
+      "AutoCAD"
+    ],
+    "certifications": [],
+    "placed": false,
+    "verification": {
+      "personal_info": true,
+      "academic_info": true,
+      "documents": true,
+      "placement_eligibility": true
+    },
+    "companies_offered": [],
+    "createdAt": {
+      "$date": "2025-11-07T16:52:34.171Z"
+    },
+    "updatedAt": {
+      "$date": "2025-11-07T16:52:34.171Z"
+    },
+    "__v": 0,
+    "login_ref": {
+      "$oid": "690e23d2aaaa9dcc8381b6cf"
+    }
+  },
+  {
+    "_id": {
+      "$oid": "690e23d2aaaa9dcc8381b6d0"
+    },
+    "first_name": "Student36",
+    "last_name": "Test",
+    "gender": "Female",
+    "date_of_birth": {
+      "$date": "2003-07-12T18:30:00.000Z"
+    },
+    "email": "student36@college.edu",
+    "phone_number": "9876510026",
+    "address": "Bangalore, India",
+    "photo_url": "https://example.com/photo.jpg",
+    "description": "Student from dept 690de76c1ca580798872fc58",
+    "univesity_number": "ME2023106",
+    "department_id": {
+      "$oid": "690de76c1ca580798872fc58"
+    },
+    "year_of_join": 2023,
+    "year_of_study": 3,
+    "cgpa": 8.27,
+    "backlogs": 1,
+    "skills": [
+      "SolidWorks",
+      "AutoCAD"
+    ],
+    "certifications": [],
+    "placed": false,
+    "verification": {
+      "personal_info": true,
+      "academic_info": true,
+      "documents": true,
+      "placement_eligibility": true
+    },
+    "companies_offered": [],
+    "createdAt": {
+      "$date": "2025-11-07T16:52:34.171Z"
+    },
+    "updatedAt": {
+      "$date": "2025-11-07T16:52:34.171Z"
+    },
+    "__v": 0,
+    "login_ref": {
+      "$oid": "690e23d2aaaa9dcc8381b6d1"
+    }
+  },
+  {
+    "_id": {
+      "$oid": "690e23d2aaaa9dcc8381b6d2"
+    },
+    "first_name": "Student37",
+    "last_name": "Test",
+    "gender": "Male",
+    "date_of_birth": {
+      "$date": "2003-08-14T18:30:00.000Z"
+    },
+    "email": "student37@college.edu",
+    "phone_number": "9876510027",
+    "address": "Bangalore, India",
+    "photo_url": "https://example.com/photo.jpg",
+    "description": "Student from dept 690de76c1ca580798872fc58",
+    "univesity_number": "ME2023107",
+    "department_id": {
+      "$oid": "690de76c1ca580798872fc58"
+    },
+    "year_of_join": 2023,
+    "year_of_study": 3,
+    "cgpa": 8.24,
+    "backlogs": 0,
+    "skills": [
+      "SolidWorks",
+      "AutoCAD"
+    ],
+    "certifications": [],
+    "placed": false,
+    "verification": {
+      "personal_info": true,
+      "academic_info": true,
+      "documents": true,
+      "placement_eligibility": true
+    },
+    "companies_offered": [],
+    "createdAt": {
+      "$date": "2025-11-07T16:52:34.171Z"
+    },
+    "updatedAt": {
+      "$date": "2025-11-07T16:52:34.171Z"
+    },
+    "__v": 0,
+    "login_ref": {
+      "$oid": "690e23d2aaaa9dcc8381b6d3"
+    }
+  },
+  {
+    "_id": {
+      "$oid": "690e23d2aaaa9dcc8381b6d4"
+    },
+    "first_name": "Student38",
+    "last_name": "Test",
+    "gender": "Female",
+    "date_of_birth": {
+      "$date": "2003-09-16T18:30:00.000Z"
+    },
+    "email": "student38@college.edu",
+    "phone_number": "9876510028",
+    "address": "Bangalore, India",
+    "photo_url": "https://example.com/photo.jpg",
+    "description": "Student from dept 690de76c1ca580798872fc58",
+    "univesity_number": "ME2023108",
+    "department_id": {
+      "$oid": "690de76c1ca580798872fc58"
+    },
+    "year_of_join": 2023,
+    "year_of_study": 3,
+    "cgpa": 8.4,
+    "backlogs": 0,
+    "skills": [
+      "SolidWorks",
+      "AutoCAD"
+    ],
+    "certifications": [],
+    "placed": false,
+    "verification": {
+      "personal_info": true,
+      "academic_info": true,
+      "documents": true,
+      "placement_eligibility": true
+    },
+    "companies_offered": [],
+    "createdAt": {
+      "$date": "2025-11-07T16:52:34.171Z"
+    },
+    "updatedAt": {
+      "$date": "2025-11-07T16:52:34.171Z"
+    },
+    "__v": 0,
+    "login_ref": {
+      "$oid": "690e23d2aaaa9dcc8381b6d5"
+    }
+  },
+  {
+    "_id": {
+      "$oid": "690e23d2aaaa9dcc8381b6d6"
+    },
+    "first_name": "Student39",
+    "last_name": "Test",
+    "gender": "Male",
+    "date_of_birth": {
+      "$date": "2003-10-18T18:30:00.000Z"
+    },
+    "email": "student39@college.edu",
+    "phone_number": "9876510029",
+    "address": "Bangalore, India",
+    "photo_url": "https://example.com/photo.jpg",
+    "description": "Student from dept 690de76c1ca580798872fc58",
+    "univesity_number": "ME2023109",
+    "department_id": {
+      "$oid": "690de76c1ca580798872fc58"
+    },
+    "year_of_join": 2023,
+    "year_of_study": 3,
+    "cgpa": 9.52,
+    "backlogs": 1,
+    "skills": [
+      "SolidWorks",
+      "AutoCAD"
+    ],
+    "certifications": [],
+    "placed": false,
+    "verification": {
+      "personal_info": true,
+      "academic_info": true,
+      "documents": true,
+      "placement_eligibility": true
+    },
+    "companies_offered": [],
+    "createdAt": {
+      "$date": "2025-11-07T16:52:34.171Z"
+    },
+    "updatedAt": {
+      "$date": "2025-11-07T16:52:34.171Z"
+    },
+    "__v": 0,
+    "login_ref": {
+      "$oid": "690e23d2aaaa9dcc8381b6d7"
+    }
+  },
+  {
+    "_id": {
+      "$oid": "690e23d2aaaa9dcc8381b6d8"
+    },
+    "first_name": "Student310",
+    "last_name": "Test",
+    "gender": "Female",
+    "date_of_birth": {
+      "$date": "2003-11-20T18:30:00.000Z"
+    },
+    "email": "student310@college.edu",
+    "phone_number": "9876510030",
+    "address": "Bangalore, India",
+    "photo_url": "https://example.com/photo.jpg",
+    "description": "Student from dept 690de76c1ca580798872fc58",
+    "univesity_number": "ME2023110",
+    "department_id": {
+      "$oid": "690de76c1ca580798872fc58"
+    },
+    "year_of_join": 2023,
+    "year_of_study": 3,
+    "cgpa": 9.34,
+    "backlogs": 0,
+    "skills": [
+      "SolidWorks",
+      "AutoCAD"
+    ],
+    "certifications": [],
+    "placed": false,
+    "verification": {
+      "personal_info": true,
+      "academic_info": true,
+      "documents": true,
+      "placement_eligibility": true
+    },
+    "companies_offered": [],
+    "createdAt": {
+      "$date": "2025-11-07T16:52:34.171Z"
+    },
+    "updatedAt": {
+      "$date": "2025-11-07T16:52:34.171Z"
+    },
+    "__v": 0,
+    "login_ref": {
+      "$oid": "690e23d2aaaa9dcc8381b6d9"
+    }
+  },
+  {
+    "_id": {
+      "$oid": "690e23d2aaaa9dcc8381b6da"
+    },
+    "first_name": "Student41",
+    "last_name": "Test",
+    "gender": "Male",
+    "date_of_birth": {
+      "$date": "2003-02-02T18:30:00.000Z"
+    },
+    "email": "student41@college.edu",
+    "phone_number": "9876510031",
+    "address": "Bangalore, India",
+    "photo_url": "https://example.com/photo.jpg",
+    "description": "Student from dept 690de76c1ca580798872fc59",
+    "univesity_number": "EEE2023101",
+    "department_id": {
+      "$oid": "690de76c1ca580798872fc59"
+    },
+    "year_of_join": 2023,
+    "year_of_study": 3,
+    "cgpa": 9.49,
+    "backlogs": 0,
+    "skills": [
+      "MATLAB",
+      "Power Systems"
+    ],
+    "certifications": [],
+    "placed": false,
+    "verification": {
+      "personal_info": true,
+      "academic_info": true,
+      "documents": true,
+      "placement_eligibility": true
+    },
+    "companies_offered": [],
+    "createdAt": {
+      "$date": "2025-11-07T16:52:34.171Z"
+    },
+    "updatedAt": {
+      "$date": "2025-11-07T16:52:34.171Z"
+    },
+    "__v": 0,
+    "login_ref": {
+      "$oid": "690e23d2aaaa9dcc8381b6db"
+    }
+  },
+  {
+    "_id": {
+      "$oid": "690e23d2aaaa9dcc8381b6dc"
+    },
+    "first_name": "Student42",
+    "last_name": "Test",
+    "gender": "Female",
+    "date_of_birth": {
+      "$date": "2003-03-04T18:30:00.000Z"
+    },
+    "email": "student42@college.edu",
+    "phone_number": "9876510032",
+    "address": "Bangalore, India",
+    "photo_url": "https://example.com/photo.jpg",
+    "description": "Student from dept 690de76c1ca580798872fc59",
+    "univesity_number": "EEE2023102",
+    "department_id": {
+      "$oid": "690de76c1ca580798872fc59"
+    },
+    "year_of_join": 2023,
+    "year_of_study": 3,
+    "cgpa": 9.63,
+    "backlogs": 0,
+    "skills": [
+      "MATLAB",
+      "Power Systems"
+    ],
+    "certifications": [],
+    "placed": false,
+    "verification": {
+      "personal_info": true,
+      "academic_info": true,
+      "documents": true,
+      "placement_eligibility": true
+    },
+    "companies_offered": [],
+    "createdAt": {
+      "$date": "2025-11-07T16:52:34.171Z"
+    },
+    "updatedAt": {
+      "$date": "2025-11-07T16:52:34.171Z"
+    },
+    "__v": 0,
+    "login_ref": {
+      "$oid": "690e23d2aaaa9dcc8381b6dd"
+    }
+  },
+  {
+    "_id": {
+      "$oid": "690e23d2aaaa9dcc8381b6de"
+    },
+    "first_name": "Student43",
+    "last_name": "Test",
+    "gender": "Male",
+    "date_of_birth": {
+      "$date": "2003-04-06T18:30:00.000Z"
+    },
+    "email": "student43@college.edu",
+    "phone_number": "9876510033",
+    "address": "Bangalore, India",
+    "photo_url": "https://example.com/photo.jpg",
+    "description": "Student from dept 690de76c1ca580798872fc59",
+    "univesity_number": "EEE2023103",
+    "department_id": {
+      "$oid": "690de76c1ca580798872fc59"
+    },
+    "year_of_join": 2023,
+    "year_of_study": 3,
+    "cgpa": 7.55,
+    "backlogs": 1,
+    "skills": [
+      "MATLAB",
+      "Power Systems"
+    ],
+    "certifications": [],
+    "placed": false,
+    "verification": {
+      "personal_info": true,
+      "academic_info": true,
+      "documents": true,
+      "placement_eligibility": true
+    },
+    "companies_offered": [],
+    "createdAt": {
+      "$date": "2025-11-07T16:52:34.171Z"
+    },
+    "updatedAt": {
+      "$date": "2025-11-07T16:52:34.171Z"
+    },
+    "__v": 0,
+    "login_ref": {
+      "$oid": "690e23d2aaaa9dcc8381b6df"
+    }
+  },
+  {
+    "_id": {
+      "$oid": "690e23d2aaaa9dcc8381b6e0"
+    },
+    "first_name": "Student44",
+    "last_name": "Test",
+    "gender": "Female",
+    "date_of_birth": {
+      "$date": "2003-05-08T18:30:00.000Z"
+    },
+    "email": "student44@college.edu",
+    "phone_number": "9876510034",
+    "address": "Bangalore, India",
+    "photo_url": "https://example.com/photo.jpg",
+    "description": "Student from dept 690de76c1ca580798872fc59",
+    "univesity_number": "EEE2023104",
+    "department_id": {
+      "$oid": "690de76c1ca580798872fc59"
+    },
+    "year_of_join": 2023,
+    "year_of_study": 3,
+    "cgpa": 9.5,
+    "backlogs": 0,
+    "skills": [
+      "MATLAB",
+      "Power Systems"
+    ],
+    "certifications": [],
+    "placed": false,
+    "verification": {
+      "personal_info": true,
+      "academic_info": true,
+      "documents": true,
+      "placement_eligibility": true
+    },
+    "companies_offered": [],
+    "createdAt": {
+      "$date": "2025-11-07T16:52:34.171Z"
+    },
+    "updatedAt": {
+      "$date": "2025-11-07T16:52:34.171Z"
+    },
+    "__v": 0,
+    "login_ref": {
+      "$oid": "690e23d2aaaa9dcc8381b6e1"
+    }
+  },
+  {
+    "_id": {
+      "$oid": "690e23d2aaaa9dcc8381b6e2"
+    },
+    "first_name": "Student45",
+    "last_name": "Test",
+    "gender": "Male",
+    "date_of_birth": {
+      "$date": "2003-06-10T18:30:00.000Z"
+    },
+    "email": "student45@college.edu",
+    "phone_number": "9876510035",
+    "address": "Bangalore, India",
+    "photo_url": "https://example.com/photo.jpg",
+    "description": "Student from dept 690de76c1ca580798872fc59",
+    "univesity_number": "EEE2023105",
+    "department_id": {
+      "$oid": "690de76c1ca580798872fc59"
+    },
+    "year_of_join": 2023,
+    "year_of_study": 3,
+    "cgpa": 7.66,
+    "backlogs": 0,
+    "skills": [
+      "MATLAB",
+      "Power Systems"
+    ],
+    "certifications": [],
+    "placed": false,
+    "verification": {
+      "personal_info": true,
+      "academic_info": true,
+      "documents": true,
+      "placement_eligibility": true
+    },
+    "companies_offered": [],
+    "createdAt": {
+      "$date": "2025-11-07T16:52:34.171Z"
+    },
+    "updatedAt": {
+      "$date": "2025-11-07T16:52:34.171Z"
+    },
+    "__v": 0,
+    "login_ref": {
+      "$oid": "690e23d2aaaa9dcc8381b6e3"
+    }
+  },
+  {
+    "_id": {
+      "$oid": "690e23d2aaaa9dcc8381b6e4"
+    },
+    "first_name": "Student46",
+    "last_name": "Test",
+    "gender": "Female",
+    "date_of_birth": {
+      "$date": "2003-07-12T18:30:00.000Z"
+    },
+    "email": "student46@college.edu",
+    "phone_number": "9876510036",
+    "address": "Bangalore, India",
+    "photo_url": "https://example.com/photo.jpg",
+    "description": "Student from dept 690de76c1ca580798872fc59",
+    "univesity_number": "EEE2023106",
+    "department_id": {
+      "$oid": "690de76c1ca580798872fc59"
+    },
+    "year_of_join": 2023,
+    "year_of_study": 3,
+    "cgpa": 9.55,
+    "backlogs": 1,
+    "skills": [
+      "MATLAB",
+      "Power Systems"
+    ],
+    "certifications": [],
+    "placed": false,
+    "verification": {
+      "personal_info": true,
+      "academic_info": true,
+      "documents": true,
+      "placement_eligibility": true
+    },
+    "companies_offered": [],
+    "createdAt": {
+      "$date": "2025-11-07T16:52:34.171Z"
+    },
+    "updatedAt": {
+      "$date": "2025-11-07T16:52:34.171Z"
+    },
+    "__v": 0,
+    "login_ref": {
+      "$oid": "690e23d2aaaa9dcc8381b6e5"
+    }
+  },
+  {
+    "_id": {
+      "$oid": "690e23d2aaaa9dcc8381b6e6"
+    },
+    "first_name": "Student47",
+    "last_name": "Test",
+    "gender": "Male",
+    "date_of_birth": {
+      "$date": "2003-08-14T18:30:00.000Z"
+    },
+    "email": "student47@college.edu",
+    "phone_number": "9876510037",
+    "address": "Bangalore, India",
+    "photo_url": "https://example.com/photo.jpg",
+    "description": "Student from dept 690de76c1ca580798872fc59",
+    "univesity_number": "EEE2023107",
+    "department_id": {
+      "$oid": "690de76c1ca580798872fc59"
+    },
+    "year_of_join": 2023,
+    "year_of_study": 3,
+    "cgpa": 8.95,
+    "backlogs": 0,
+    "skills": [
+      "MATLAB",
+      "Power Systems"
+    ],
+    "certifications": [],
+    "placed": false,
+    "verification": {
+      "personal_info": true,
+      "academic_info": true,
+      "documents": true,
+      "placement_eligibility": true
+    },
+    "companies_offered": [],
+    "createdAt": {
+      "$date": "2025-11-07T16:52:34.171Z"
+    },
+    "updatedAt": {
+      "$date": "2025-11-07T16:52:34.171Z"
+    },
+    "__v": 0,
+    "login_ref": {
+      "$oid": "690e23d2aaaa9dcc8381b6e7"
+    }
+  },
+  {
+    "_id": {
+      "$oid": "690e23d2aaaa9dcc8381b6e8"
+    },
+    "first_name": "Student48",
+    "last_name": "Test",
+    "gender": "Female",
+    "date_of_birth": {
+      "$date": "2003-09-16T18:30:00.000Z"
+    },
+    "email": "student48@college.edu",
+    "phone_number": "9876510038",
+    "address": "Bangalore, India",
+    "photo_url": "https://example.com/photo.jpg",
+    "description": "Student from dept 690de76c1ca580798872fc59",
+    "univesity_number": "EEE2023108",
+    "department_id": {
+      "$oid": "690de76c1ca580798872fc59"
+    },
+    "year_of_join": 2023,
+    "year_of_study": 3,
+    "cgpa": 7.83,
+    "backlogs": 0,
+    "skills": [
+      "MATLAB",
+      "Power Systems"
+    ],
+    "certifications": [],
+    "placed": false,
+    "verification": {
+      "personal_info": true,
+      "academic_info": true,
+      "documents": true,
+      "placement_eligibility": true
+    },
+    "companies_offered": [],
+    "createdAt": {
+      "$date": "2025-11-07T16:52:34.171Z"
+    },
+    "updatedAt": {
+      "$date": "2025-11-07T16:52:34.171Z"
+    },
+    "__v": 0,
+    "login_ref": {
+      "$oid": "690e23d2aaaa9dcc8381b6e9"
+    }
+  },
+  {
+    "_id": {
+      "$oid": "690e23d2aaaa9dcc8381b6ea"
+    },
+    "first_name": "Student49",
+    "last_name": "Test",
+    "gender": "Male",
+    "date_of_birth": {
+      "$date": "2003-10-18T18:30:00.000Z"
+    },
+    "email": "student49@college.edu",
+    "phone_number": "9876510039",
+    "address": "Bangalore, India",
+    "photo_url": "https://example.com/photo.jpg",
+    "description": "Student from dept 690de76c1ca580798872fc59",
+    "univesity_number": "EEE2023109",
+    "department_id": {
+      "$oid": "690de76c1ca580798872fc59"
+    },
+    "year_of_join": 2023,
+    "year_of_study": 3,
+    "cgpa": 9.37,
+    "backlogs": 1,
+    "skills": [
+      "MATLAB",
+      "Power Systems"
+    ],
+    "certifications": [],
+    "placed": false,
+    "verification": {
+      "personal_info": true,
+      "academic_info": true,
+      "documents": true,
+      "placement_eligibility": true
+    },
+    "companies_offered": [],
+    "createdAt": {
+      "$date": "2025-11-07T16:52:34.171Z"
+    },
+    "updatedAt": {
+      "$date": "2025-11-07T16:52:34.171Z"
+    },
+    "__v": 0,
+    "login_ref": {
+      "$oid": "690e23d2aaaa9dcc8381b6eb"
+    }
+  },
+  {
+    "_id": {
+      "$oid": "690e23d2aaaa9dcc8381b6ec"
+    },
+    "first_name": "Student410",
+    "last_name": "Test",
+    "gender": "Female",
+    "date_of_birth": {
+      "$date": "2003-11-20T18:30:00.000Z"
+    },
+    "email": "student410@college.edu",
+    "phone_number": "9876510040",
+    "address": "Bangalore, India",
+    "photo_url": "https://example.com/photo.jpg",
+    "description": "Student from dept 690de76c1ca580798872fc59",
+    "univesity_number": "EEE2023110",
+    "department_id": {
+      "$oid": "690de76c1ca580798872fc59"
+    },
+    "year_of_join": 2023,
+    "year_of_study": 3,
+    "cgpa": 9.85,
+    "backlogs": 0,
+    "skills": [
+      "MATLAB",
+      "Power Systems"
+    ],
+    "certifications": [],
+    "placed": false,
+    "verification": {
+      "personal_info": true,
+      "academic_info": true,
+      "documents": true,
+      "placement_eligibility": true
+    },
+    "companies_offered": [],
+    "createdAt": {
+      "$date": "2025-11-07T16:52:34.171Z"
+    },
+    "updatedAt": {
+      "$date": "2025-11-07T16:52:34.171Z"
+    },
+    "__v": 0,
+    "login_ref": {
+      "$oid": "690e23d2aaaa9dcc8381b6ed"
+    }
+  },
+  {
+    "_id": {
+      "$oid": "690e23d2aaaa9dcc8381b6ee"
+    },
+    "first_name": "Student51",
+    "last_name": "Test",
+    "gender": "Male",
+    "date_of_birth": {
+      "$date": "2003-02-02T18:30:00.000Z"
+    },
+    "email": "student51@college.edu",
+    "phone_number": "9876510041",
+    "address": "Bangalore, India",
+    "photo_url": "https://example.com/photo.jpg",
+    "description": "Student from dept 690de76c1ca580798872fc60",
+    "univesity_number": "CE2023101",
+    "department_id": {
+      "$oid": "690de76c1ca580798872fc60"
+    },
+    "year_of_join": 2023,
+    "year_of_study": 3,
+    "cgpa": 8.36,
+    "backlogs": 0,
+    "skills": [
+      "Surveying",
+      "Civil 3D"
+    ],
+    "certifications": [],
+    "placed": false,
+    "verification": {
+      "personal_info": true,
+      "academic_info": true,
+      "documents": true,
+      "placement_eligibility": true
+    },
+    "companies_offered": [],
+    "createdAt": {
+      "$date": "2025-11-07T16:52:34.171Z"
+    },
+    "updatedAt": {
+      "$date": "2025-11-07T16:52:34.171Z"
+    },
+    "__v": 0,
+    "login_ref": {
+      "$oid": "690e23d2aaaa9dcc8381b6ef"
+    }
+  },
+  {
+    "_id": {
+      "$oid": "690e23d2aaaa9dcc8381b6f0"
+    },
+    "first_name": "Student52",
+    "last_name": "Test",
+    "gender": "Female",
+    "date_of_birth": {
+      "$date": "2003-03-04T18:30:00.000Z"
+    },
+    "email": "student52@college.edu",
+    "phone_number": "9876510042",
+    "address": "Bangalore, India",
+    "photo_url": "https://example.com/photo.jpg",
+    "description": "Student from dept 690de76c1ca580798872fc60",
+    "univesity_number": "CE2023102",
+    "department_id": {
+      "$oid": "690de76c1ca580798872fc60"
+    },
+    "year_of_join": 2023,
+    "year_of_study": 3,
+    "cgpa": 8.68,
+    "backlogs": 0,
+    "skills": [
+      "Surveying",
+      "Civil 3D"
+    ],
+    "certifications": [],
+    "placed": false,
+    "verification": {
+      "personal_info": true,
+      "academic_info": true,
+      "documents": true,
+      "placement_eligibility": true
+    },
+    "companies_offered": [],
+    "createdAt": {
+      "$date": "2025-11-07T16:52:34.171Z"
+    },
+    "updatedAt": {
+      "$date": "2025-11-07T16:52:34.171Z"
+    },
+    "__v": 0,
+    "login_ref": {
+      "$oid": "690e23d2aaaa9dcc8381b6f1"
+    }
+  },
+  {
+    "_id": {
+      "$oid": "690e23d2aaaa9dcc8381b6f2"
+    },
+    "first_name": "Student53",
+    "last_name": "Test",
+    "gender": "Male",
+    "date_of_birth": {
+      "$date": "2003-04-06T18:30:00.000Z"
+    },
+    "email": "student53@college.edu",
+    "phone_number": "9876510043",
+    "address": "Bangalore, India",
+    "photo_url": "https://example.com/photo.jpg",
+    "description": "Student from dept 690de76c1ca580798872fc60",
+    "univesity_number": "CE2023103",
+    "department_id": {
+      "$oid": "690de76c1ca580798872fc60"
+    },
+    "year_of_join": 2023,
+    "year_of_study": 3,
+    "cgpa": 7.61,
+    "backlogs": 1,
+    "skills": [
+      "Surveying",
+      "Civil 3D"
+    ],
+    "certifications": [],
+    "placed": false,
+    "verification": {
+      "personal_info": true,
+      "academic_info": true,
+      "documents": true,
+      "placement_eligibility": true
+    },
+    "companies_offered": [],
+    "createdAt": {
+      "$date": "2025-11-07T16:52:34.171Z"
+    },
+    "updatedAt": {
+      "$date": "2025-11-07T16:52:34.171Z"
+    },
+    "__v": 0,
+    "login_ref": {
+      "$oid": "690e23d2aaaa9dcc8381b6f3"
+    }
+  },
+  {
+    "_id": {
+      "$oid": "690e23d2aaaa9dcc8381b6f4"
+    },
+    "first_name": "Student54",
+    "last_name": "Test",
+    "gender": "Female",
+    "date_of_birth": {
+      "$date": "2003-05-08T18:30:00.000Z"
+    },
+    "email": "student54@college.edu",
+    "phone_number": "9876510044",
+    "address": "Bangalore, India",
+    "photo_url": "https://example.com/photo.jpg",
+    "description": "Student from dept 690de76c1ca580798872fc60",
+    "univesity_number": "CE2023104",
+    "department_id": {
+      "$oid": "690de76c1ca580798872fc60"
+    },
+    "year_of_join": 2023,
+    "year_of_study": 3,
+    "cgpa": 7.9,
+    "backlogs": 0,
+    "skills": [
+      "Surveying",
+      "Civil 3D"
+    ],
+    "certifications": [],
+    "placed": false,
+    "verification": {
+      "personal_info": true,
+      "academic_info": true,
+      "documents": true,
+      "placement_eligibility": true
+    },
+    "companies_offered": [],
+    "createdAt": {
+      "$date": "2025-11-07T16:52:34.171Z"
+    },
+    "updatedAt": {
+      "$date": "2025-11-07T16:52:34.171Z"
+    },
+    "__v": 0,
+    "login_ref": {
+      "$oid": "690e23d2aaaa9dcc8381b6f5"
+    }
+  },
+  {
+    "_id": {
+      "$oid": "690e23d2aaaa9dcc8381b6f6"
+    },
+    "first_name": "Student55",
+    "last_name": "Test",
+    "gender": "Male",
+    "date_of_birth": {
+      "$date": "2003-06-10T18:30:00.000Z"
+    },
+    "email": "student55@college.edu",
+    "phone_number": "9876510045",
+    "address": "Bangalore, India",
+    "photo_url": "https://example.com/photo.jpg",
+    "description": "Student from dept 690de76c1ca580798872fc60",
+    "univesity_number": "CE2023105",
+    "department_id": {
+      "$oid": "690de76c1ca580798872fc60"
+    },
+    "year_of_join": 2023,
+    "year_of_study": 3,
+    "cgpa": 8.62,
+    "backlogs": 0,
+    "skills": [
+      "Surveying",
+      "Civil 3D"
+    ],
+    "certifications": [],
+    "placed": false,
+    "verification": {
+      "personal_info": true,
+      "academic_info": true,
+      "documents": true,
+      "placement_eligibility": true
+    },
+    "companies_offered": [],
+    "createdAt": {
+      "$date": "2025-11-07T16:52:34.171Z"
+    },
+    "updatedAt": {
+      "$date": "2025-11-07T16:52:34.171Z"
+    },
+    "__v": 0,
+    "login_ref": {
+      "$oid": "690e23d2aaaa9dcc8381b6f7"
+    }
+  },
+  {
+    "_id": {
+      "$oid": "690e23d2aaaa9dcc8381b6f8"
+    },
+    "first_name": "Student56",
+    "last_name": "Test",
+    "gender": "Female",
+    "date_of_birth": {
+      "$date": "2003-07-12T18:30:00.000Z"
+    },
+    "email": "student56@college.edu",
+    "phone_number": "9876510046",
+    "address": "Bangalore, India",
+    "photo_url": "https://example.com/photo.jpg",
+    "description": "Student from dept 690de76c1ca580798872fc60",
+    "univesity_number": "CE2023106",
+    "department_id": {
+      "$oid": "690de76c1ca580798872fc60"
+    },
+    "year_of_join": 2023,
+    "year_of_study": 3,
+    "cgpa": 7.4,
+    "backlogs": 1,
+    "skills": [
+      "Surveying",
+      "Civil 3D"
+    ],
+    "certifications": [],
+    "placed": false,
+    "verification": {
+      "personal_info": true,
+      "academic_info": true,
+      "documents": true,
+      "placement_eligibility": true
+    },
+    "companies_offered": [],
+    "createdAt": {
+      "$date": "2025-11-07T16:52:34.171Z"
+    },
+    "updatedAt": {
+      "$date": "2025-11-07T16:52:34.171Z"
+    },
+    "__v": 0,
+    "login_ref": {
+      "$oid": "690e23d2aaaa9dcc8381b6f9"
+    }
+  },
+  {
+    "_id": {
+      "$oid": "690e23d2aaaa9dcc8381b6fa"
+    },
+    "first_name": "Student57",
+    "last_name": "Test",
+    "gender": "Male",
+    "date_of_birth": {
+      "$date": "2003-08-14T18:30:00.000Z"
+    },
+    "email": "student57@college.edu",
+    "phone_number": "9876510047",
+    "address": "Bangalore, India",
+    "photo_url": "https://example.com/photo.jpg",
+    "description": "Student from dept 690de76c1ca580798872fc60",
+    "univesity_number": "CE2023107",
+    "department_id": {
+      "$oid": "690de76c1ca580798872fc60"
+    },
+    "year_of_join": 2023,
+    "year_of_study": 3,
+    "cgpa": 9.8,
+    "backlogs": 0,
+    "skills": [
+      "Surveying",
+      "Civil 3D"
+    ],
+    "certifications": [],
+    "placed": false,
+    "verification": {
+      "personal_info": true,
+      "academic_info": true,
+      "documents": true,
+      "placement_eligibility": true
+    },
+    "companies_offered": [],
+    "createdAt": {
+      "$date": "2025-11-07T16:52:34.171Z"
+    },
+    "updatedAt": {
+      "$date": "2025-11-07T16:52:34.171Z"
+    },
+    "__v": 0,
+    "login_ref": {
+      "$oid": "690e23d2aaaa9dcc8381b6fb"
+    }
+  },
+  {
+    "_id": {
+      "$oid": "690e23d2aaaa9dcc8381b6fc"
+    },
+    "first_name": "Student58",
+    "last_name": "Test",
+    "gender": "Female",
+    "date_of_birth": {
+      "$date": "2003-09-16T18:30:00.000Z"
+    },
+    "email": "student58@college.edu",
+    "phone_number": "9876510048",
+    "address": "Bangalore, India",
+    "photo_url": "https://example.com/photo.jpg",
+    "description": "Student from dept 690de76c1ca580798872fc60",
+    "univesity_number": "CE2023108",
+    "department_id": {
+      "$oid": "690de76c1ca580798872fc60"
+    },
+    "year_of_join": 2023,
+    "year_of_study": 3,
+    "cgpa": 7.83,
+    "backlogs": 0,
+    "skills": [
+      "Surveying",
+      "Civil 3D"
+    ],
+    "certifications": [],
+    "placed": false,
+    "verification": {
+      "personal_info": true,
+      "academic_info": true,
+      "documents": true,
+      "placement_eligibility": true
+    },
+    "companies_offered": [],
+    "createdAt": {
+      "$date": "2025-11-07T16:52:34.171Z"
+    },
+    "updatedAt": {
+      "$date": "2025-11-07T16:52:34.171Z"
+    },
+    "__v": 0,
+    "login_ref": {
+      "$oid": "690e23d2aaaa9dcc8381b6fd"
+    }
+  },
+  {
+    "_id": {
+      "$oid": "690e23d2aaaa9dcc8381b6fe"
+    },
+    "first_name": "Student59",
+    "last_name": "Test",
+    "gender": "Male",
+    "date_of_birth": {
+      "$date": "2003-10-18T18:30:00.000Z"
+    },
+    "email": "student59@college.edu",
+    "phone_number": "9876510049",
+    "address": "Bangalore, India",
+    "photo_url": "https://example.com/photo.jpg",
+    "description": "Student from dept 690de76c1ca580798872fc60",
+    "univesity_number": "CE2023109",
+    "department_id": {
+      "$oid": "690de76c1ca580798872fc60"
+    },
+    "year_of_join": 2023,
+    "year_of_study": 3,
+    "cgpa": 9.01,
+    "backlogs": 1,
+    "skills": [
+      "Surveying",
+      "Civil 3D"
+    ],
+    "certifications": [],
+    "placed": false,
+    "verification": {
+      "personal_info": true,
+      "academic_info": true,
+      "documents": true,
+      "placement_eligibility": true
+    },
+    "companies_offered": [],
+    "createdAt": {
+      "$date": "2025-11-07T16:52:34.171Z"
+    },
+    "updatedAt": {
+      "$date": "2025-11-07T16:52:34.171Z"
+    },
+    "__v": 0,
+    "login_ref": {
+      "$oid": "690e23d2aaaa9dcc8381b6ff"
+    }
+  },
+  {
+    "_id": {
+      "$oid": "690e23d2aaaa9dcc8381b700"
+    },
+    "first_name": "Student510",
+    "last_name": "Test",
+    "gender": "Female",
+    "date_of_birth": {
+      "$date": "2003-11-20T18:30:00.000Z"
+    },
+    "email": "student510@college.edu",
+    "phone_number": "9876510050",
+    "address": "Bangalore, India",
+    "photo_url": "https://example.com/photo.jpg",
+    "description": "Student from dept 690de76c1ca580798872fc60",
+    "univesity_number": "CE2023110",
+    "department_id": {
+      "$oid": "690de76c1ca580798872fc60"
+    },
+    "year_of_join": 2023,
+    "year_of_study": 3,
+    "cgpa": 7.32,
+    "backlogs": 0,
+    "skills": [
+      "Surveying",
+      "Civil 3D"
+    ],
+    "certifications": [],
+    "placed": false,
+    "verification": {
+      "personal_info": true,
+      "academic_info": true,
+      "documents": true,
+      "placement_eligibility": true
+    },
+    "companies_offered": [],
+    "createdAt": {
+      "$date": "2025-11-07T16:52:34.171Z"
+    },
+    "updatedAt": {
+      "$date": "2025-11-07T16:52:34.171Z"
+    },
+    "__v": 0,
+    "login_ref": {
+      "$oid": "690e23d2aaaa9dcc8381b701"
+    }
+  },
+  {
+    "_id": {
+      "$oid": "690e23d2aaaa9dcc8381b702"
+    },
+    "first_name": "Student61",
+    "last_name": "Test",
+    "gender": "Male",
+    "date_of_birth": {
+      "$date": "2003-02-02T18:30:00.000Z"
+    },
+    "email": "student61@college.edu",
+    "phone_number": "9876510051",
+    "address": "Bangalore, India",
+    "photo_url": "https://example.com/photo.jpg",
+    "description": "Student from dept 690de76c1ca580798872fc61",
+    "univesity_number": "IT2023101",
+    "department_id": {
+      "$oid": "690de76c1ca580798872fc61"
+    },
+    "year_of_join": 2023,
+    "year_of_study": 3,
+    "cgpa": 9.06,
+    "backlogs": 0,
+    "skills": [
+      "HTML",
+      "CSS",
+      "JavaScript"
+    ],
+    "certifications": [],
+    "placed": false,
+    "verification": {
+      "personal_info": true,
+      "academic_info": true,
+      "documents": true,
+      "placement_eligibility": true
+    },
+    "companies_offered": [],
+    "createdAt": {
+      "$date": "2025-11-07T16:52:34.171Z"
+    },
+    "updatedAt": {
+      "$date": "2025-11-07T16:52:34.171Z"
+    },
+    "__v": 0,
+    "login_ref": {
+      "$oid": "690e23d2aaaa9dcc8381b703"
+    }
+  },
+  {
+    "_id": {
+      "$oid": "690e23d2aaaa9dcc8381b704"
+    },
+    "first_name": "Student62",
+    "last_name": "Test",
+    "gender": "Female",
+    "date_of_birth": {
+      "$date": "2003-03-04T18:30:00.000Z"
+    },
+    "email": "student62@college.edu",
+    "phone_number": "9876510052",
+    "address": "Bangalore, India",
+    "photo_url": "https://example.com/photo.jpg",
+    "description": "Student from dept 690de76c1ca580798872fc61",
+    "univesity_number": "IT2023102",
+    "department_id": {
+      "$oid": "690de76c1ca580798872fc61"
+    },
+    "year_of_join": 2023,
+    "year_of_study": 3,
+    "cgpa": 8.96,
+    "backlogs": 0,
+    "skills": [
+      "HTML",
+      "CSS",
+      "JavaScript"
+    ],
+    "certifications": [],
+    "placed": false,
+    "verification": {
+      "personal_info": true,
+      "academic_info": true,
+      "documents": true,
+      "placement_eligibility": true
+    },
+    "companies_offered": [],
+    "createdAt": {
+      "$date": "2025-11-07T16:52:34.171Z"
+    },
+    "updatedAt": {
+      "$date": "2025-11-07T16:52:34.171Z"
+    },
+    "__v": 0,
+    "login_ref": {
+      "$oid": "690e23d2aaaa9dcc8381b705"
+    }
+  },
+  {
+    "_id": {
+      "$oid": "690e23d2aaaa9dcc8381b706"
+    },
+    "first_name": "Student63",
+    "last_name": "Test",
+    "gender": "Male",
+    "date_of_birth": {
+      "$date": "2003-04-06T18:30:00.000Z"
+    },
+    "email": "student63@college.edu",
+    "phone_number": "9876510053",
+    "address": "Bangalore, India",
+    "photo_url": "https://example.com/photo.jpg",
+    "description": "Student from dept 690de76c1ca580798872fc61",
+    "univesity_number": "IT2023103",
+    "department_id": {
+      "$oid": "690de76c1ca580798872fc61"
+    },
+    "year_of_join": 2023,
+    "year_of_study": 3,
+    "cgpa": 9.53,
+    "backlogs": 1,
+    "skills": [
+      "HTML",
+      "CSS",
+      "JavaScript"
+    ],
+    "certifications": [],
+    "placed": false,
+    "verification": {
+      "personal_info": true,
+      "academic_info": true,
+      "documents": true,
+      "placement_eligibility": true
+    },
+    "companies_offered": [],
+    "createdAt": {
+      "$date": "2025-11-07T16:52:34.171Z"
+    },
+    "updatedAt": {
+      "$date": "2025-11-07T16:52:34.171Z"
+    },
+    "__v": 0,
+    "login_ref": {
+      "$oid": "690e23d2aaaa9dcc8381b707"
+    }
+  },
+  {
+    "_id": {
+      "$oid": "690e23d2aaaa9dcc8381b708"
+    },
+    "first_name": "Student64",
+    "last_name": "Test",
+    "gender": "Female",
+    "date_of_birth": {
+      "$date": "2003-05-08T18:30:00.000Z"
+    },
+    "email": "student64@college.edu",
+    "phone_number": "9876510054",
+    "address": "Bangalore, India",
+    "photo_url": "https://example.com/photo.jpg",
+    "description": "Student from dept 690de76c1ca580798872fc61",
+    "univesity_number": "IT2023104",
+    "department_id": {
+      "$oid": "690de76c1ca580798872fc61"
+    },
+    "year_of_join": 2023,
+    "year_of_study": 3,
+    "cgpa": 8.53,
+    "backlogs": 0,
+    "skills": [
+      "HTML",
+      "CSS",
+      "JavaScript"
+    ],
+    "certifications": [],
+    "placed": false,
+    "verification": {
+      "personal_info": true,
+      "academic_info": true,
+      "documents": true,
+      "placement_eligibility": true
+    },
+    "companies_offered": [],
+    "createdAt": {
+      "$date": "2025-11-07T16:52:34.171Z"
+    },
+    "updatedAt": {
+      "$date": "2025-11-07T16:52:34.171Z"
+    },
+    "__v": 0,
+    "login_ref": {
+      "$oid": "690e23d2aaaa9dcc8381b709"
+    }
+  },
+  {
+    "_id": {
+      "$oid": "690e23d2aaaa9dcc8381b70a"
+    },
+    "first_name": "Student65",
+    "last_name": "Test",
+    "gender": "Male",
+    "date_of_birth": {
+      "$date": "2003-06-10T18:30:00.000Z"
+    },
+    "email": "student65@college.edu",
+    "phone_number": "9876510055",
+    "address": "Bangalore, India",
+    "photo_url": "https://example.com/photo.jpg",
+    "description": "Student from dept 690de76c1ca580798872fc61",
+    "univesity_number": "IT2023105",
+    "department_id": {
+      "$oid": "690de76c1ca580798872fc61"
+    },
+    "year_of_join": 2023,
+    "year_of_study": 3,
+    "cgpa": 8,
+    "backlogs": 0,
+    "skills": [
+      "HTML",
+      "CSS",
+      "JavaScript"
+    ],
+    "certifications": [],
+    "placed": false,
+    "verification": {
+      "personal_info": true,
+      "academic_info": true,
+      "documents": true,
+      "placement_eligibility": true
+    },
+    "companies_offered": [],
+    "createdAt": {
+      "$date": "2025-11-07T16:52:34.171Z"
+    },
+    "updatedAt": {
+      "$date": "2025-11-07T16:52:34.171Z"
+    },
+    "__v": 0,
+    "login_ref": {
+      "$oid": "690e23d2aaaa9dcc8381b70b"
+    }
+  },
+  {
+    "_id": {
+      "$oid": "690e23d2aaaa9dcc8381b70c"
+    },
+    "first_name": "Student66",
+    "last_name": "Test",
+    "gender": "Female",
+    "date_of_birth": {
+      "$date": "2003-07-12T18:30:00.000Z"
+    },
+    "email": "student66@college.edu",
+    "phone_number": "9876510056",
+    "address": "Bangalore, India",
+    "photo_url": "https://example.com/photo.jpg",
+    "description": "Student from dept 690de76c1ca580798872fc61",
+    "univesity_number": "IT2023106",
+    "department_id": {
+      "$oid": "690de76c1ca580798872fc61"
+    },
+    "year_of_join": 2023,
+    "year_of_study": 3,
+    "cgpa": 7.66,
+    "backlogs": 1,
+    "skills": [
+      "HTML",
+      "CSS",
+      "JavaScript"
+    ],
+    "certifications": [],
+    "placed": false,
+    "verification": {
+      "personal_info": true,
+      "academic_info": true,
+      "documents": true,
+      "placement_eligibility": true
+    },
+    "companies_offered": [],
+    "createdAt": {
+      "$date": "2025-11-07T16:52:34.171Z"
+    },
+    "updatedAt": {
+      "$date": "2025-11-07T16:52:34.171Z"
+    },
+    "__v": 0,
+    "login_ref": {
+      "$oid": "690e23d2aaaa9dcc8381b70d"
+    }
+  },
+  {
+    "_id": {
+      "$oid": "690e23d2aaaa9dcc8381b70e"
+    },
+    "first_name": "Student67",
+    "last_name": "Test",
+    "gender": "Male",
+    "date_of_birth": {
+      "$date": "2003-08-14T18:30:00.000Z"
+    },
+    "email": "student67@college.edu",
+    "phone_number": "9876510057",
+    "address": "Bangalore, India",
+    "photo_url": "https://example.com/photo.jpg",
+    "description": "Student from dept 690de76c1ca580798872fc61",
+    "univesity_number": "IT2023107",
+    "department_id": {
+      "$oid": "690de76c1ca580798872fc61"
+    },
+    "year_of_join": 2023,
+    "year_of_study": 3,
+    "cgpa": 7.2,
+    "backlogs": 0,
+    "skills": [
+      "HTML",
+      "CSS",
+      "JavaScript"
+    ],
+    "certifications": [],
+    "placed": false,
+    "verification": {
+      "personal_info": true,
+      "academic_info": true,
+      "documents": true,
+      "placement_eligibility": true
+    },
+    "companies_offered": [],
+    "createdAt": {
+      "$date": "2025-11-07T16:52:34.171Z"
+    },
+    "updatedAt": {
+      "$date": "2025-11-07T16:52:34.171Z"
+    },
+    "__v": 0,
+    "login_ref": {
+      "$oid": "690e23d2aaaa9dcc8381b70f"
+    }
+  },
+  {
+    "_id": {
+      "$oid": "690e23d2aaaa9dcc8381b710"
+    },
+    "first_name": "Student68",
+    "last_name": "Test",
+    "gender": "Female",
+    "date_of_birth": {
+      "$date": "2003-09-16T18:30:00.000Z"
+    },
+    "email": "student68@college.edu",
+    "phone_number": "9876510058",
+    "address": "Bangalore, India",
+    "photo_url": "https://example.com/photo.jpg",
+    "description": "Student from dept 690de76c1ca580798872fc61",
+    "univesity_number": "IT2023108",
+    "department_id": {
+      "$oid": "690de76c1ca580798872fc61"
+    },
+    "year_of_join": 2023,
+    "year_of_study": 3,
+    "cgpa": 9.63,
+    "backlogs": 0,
+    "skills": [
+      "HTML",
+      "CSS",
+      "JavaScript"
+    ],
+    "certifications": [],
+    "placed": false,
+    "verification": {
+      "personal_info": true,
+      "academic_info": true,
+      "documents": true,
+      "placement_eligibility": true
+    },
+    "companies_offered": [],
+    "createdAt": {
+      "$date": "2025-11-07T16:52:34.171Z"
+    },
+    "updatedAt": {
+      "$date": "2025-11-07T16:52:34.171Z"
+    },
+    "__v": 0,
+    "login_ref": {
+      "$oid": "690e23d2aaaa9dcc8381b711"
+    }
+  },
+  {
+    "_id": {
+      "$oid": "690e23d2aaaa9dcc8381b712"
+    },
+    "first_name": "Student69",
+    "last_name": "Test",
+    "gender": "Male",
+    "date_of_birth": {
+      "$date": "2003-10-18T18:30:00.000Z"
+    },
+    "email": "student69@college.edu",
+    "phone_number": "9876510059",
+    "address": "Bangalore, India",
+    "photo_url": "https://example.com/photo.jpg",
+    "description": "Student from dept 690de76c1ca580798872fc61",
+    "univesity_number": "IT2023109",
+    "department_id": {
+      "$oid": "690de76c1ca580798872fc61"
+    },
+    "year_of_join": 2023,
+    "year_of_study": 3,
+    "cgpa": 7.75,
+    "backlogs": 1,
+    "skills": [
+      "HTML",
+      "CSS",
+      "JavaScript"
+    ],
+    "certifications": [],
+    "placed": false,
+    "verification": {
+      "personal_info": true,
+      "academic_info": true,
+      "documents": true,
+      "placement_eligibility": true
+    },
+    "companies_offered": [],
+    "createdAt": {
+      "$date": "2025-11-07T16:52:34.171Z"
+    },
+    "updatedAt": {
+      "$date": "2025-11-07T16:52:34.171Z"
+    },
+    "__v": 0,
+    "login_ref": {
+      "$oid": "690e23d2aaaa9dcc8381b713"
+    }
+  },
+  {
+    "_id": {
+      "$oid": "690e23d2aaaa9dcc8381b714"
+    },
+    "first_name": "Student610",
+    "last_name": "Test",
+    "gender": "Female",
+    "date_of_birth": {
+      "$date": "2003-11-20T18:30:00.000Z"
+    },
+    "email": "student610@college.edu",
+    "phone_number": "9876510060",
+    "address": "Bangalore, India",
+    "photo_url": "https://example.com/photo.jpg",
+    "description": "Student from dept 690de76c1ca580798872fc61",
+    "univesity_number": "IT2023110",
+    "department_id": {
+      "$oid": "690de76c1ca580798872fc61"
+    },
+    "year_of_join": 2023,
+    "year_of_study": 3,
+    "cgpa": 9.39,
+    "backlogs": 0,
+    "skills": [
+      "HTML",
+      "CSS",
+      "JavaScript"
+    ],
+    "certifications": [],
+    "placed": false,
+    "verification": {
+      "personal_info": true,
+      "academic_info": true,
+      "documents": true,
+      "placement_eligibility": true
+    },
+    "companies_offered": [],
+    "createdAt": {
+      "$date": "2025-11-07T16:52:34.171Z"
+    },
+    "updatedAt": {
+      "$date": "2025-11-07T16:52:34.171Z"
+    },
+    "__v": 0,
+    "login_ref": {
+      "$oid": "690e23d2aaaa9dcc8381b715"
+    }
+  }
+]

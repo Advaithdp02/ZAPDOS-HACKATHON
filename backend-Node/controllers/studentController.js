@@ -301,3 +301,44 @@ export const getMyDriveStatus = async (req, res) => {
     res.status(500).json({ message: error.message });
   }
 };
+export const getEligibleStudents = async (req, res) => {
+  try {
+    const { jobId } = req.params;
+
+    // 🧩 Find the job and populate department data
+    const job = await JobRole.findById(jobId).populate("eligible_departments", "_id name");
+    if (!job) {
+      return res.status(404).json({ message: "Job not found" });
+    }
+
+    // 🧩 Extract eligible department IDs properly (support populated or not)
+    const eligibleDeptIds = (job.eligible_departments || []).map((d) =>
+      typeof d === "object" && d._id ? d._id : d
+    );
+
+    console.log("✅ Eligible Department IDs:", eligibleDeptIds);
+
+    // 🧩 Build query dynamically based on job criteria
+    const query = {
+      department_id: { $in: eligibleDeptIds },
+      cgpa: { $gte: job.min_cgpa || 0 },
+    };
+
+    if (job.backlog_allowed === false) {
+      query.backlogs = { $lte: 0 };
+    }
+
+    // 🧩 Find eligible students
+    const students = await Student.find(query)
+      .populate("department_id", "name code")
+      .select("first_name last_name email department_id cgpa backlogs");
+
+    console.log("✅ Found Students:", students.length);
+
+    res.status(200).json(students);
+  } catch (error) {
+    console.error("❌ Error fetching eligible students:", error);
+    res.status(500).json({ message: error.message });
+  }
+};
+

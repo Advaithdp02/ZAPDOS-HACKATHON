@@ -1,6 +1,7 @@
 import JobRole from "../models/JobRole.js";
 import Company from "../models/Company.js";
-
+import Department from "../models/Department.js";
+import mongoose from "mongoose";
 // 🟢 CREATE JOB ROLE
 export const createJobRole = async (req, res) => {
   try {
@@ -19,16 +20,31 @@ export const createJobRole = async (req, res) => {
       contact_email,
       contact_phone,
       drive_date,
-      application_deadline
+      application_deadline,
     } = req.body;
 
-    // Ensure the referenced company exists
+    // Check company exists
     const existingCompany = await Company.findById(company);
     if (!existingCompany) {
       return res.status(404).json({ message: "Referenced company not found" });
     }
 
-    // Create Job Role
+    // Validate each department ID
+    if (!Array.isArray(eligible_departments) || eligible_departments.length === 0) {
+      return res.status(400).json({ message: "At least one eligible department is required" });
+    }
+
+    for (const deptId of eligible_departments) {
+      if (!mongoose.Types.ObjectId.isValid(deptId)) {
+        return res.status(400).json({ message: `Invalid department ID: ${deptId}` });
+      }
+      const dept = await Department.findById(deptId);
+      if (!dept) {
+        return res.status(404).json({ message: `Department not found: ${deptId}` });
+      }
+    }
+
+    // Create job role
     const job = await JobRole.create({
       job_role,
       job_description,
@@ -36,7 +52,7 @@ export const createJobRole = async (req, res) => {
       job_skills,
       employment_type,
       package_lpa,
-      eligible_departments,
+      eligible_departments, // ✅ array of ObjectIDs
       company,
       min_cgpa,
       backlog_allowed,
@@ -44,16 +60,16 @@ export const createJobRole = async (req, res) => {
       contact_email,
       contact_phone,
       drive_date,
-      application_deadline
+      application_deadline,
     });
 
-    // Push this job reference to Company.jobs[]
+    // Add job to company's jobs[]
     existingCompany.jobs.push(job._id);
     await existingCompany.save();
 
     res.status(201).json({
       message: "Job role created successfully",
-      job
+      job,
     });
   } catch (error) {
     res.status(500).json({ message: error.message });
