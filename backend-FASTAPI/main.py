@@ -28,9 +28,20 @@ if not MISTRAL_API_KEY:
     raise RuntimeError("MISTRAL_API_KEY environment variable is required")
 mistral_client = Mistral(api_key=MISTRAL_API_KEY)
 
+
+class EmailRequest(BaseModel):
+    to: EmailStr
+    subject: str
+    message: str
+
+@app.post("/send-mail")
+async def send_mail_endpoint(request: EmailRequest, background_tasks: BackgroundTasks):
+    background_tasks.add_task(send_email, request.to, request.subject, request.message)
+    return {"status": "queued", "to": request.to}
+
+
 class OCRRequest(BaseModel):
     object_id: str
-
 
 @app.post("/parse-pdf")
 async def parse_pdf(req: OCRRequest):
@@ -58,7 +69,7 @@ async def parse_pdf(req: OCRRequest):
                 "type": "document_url",
                 "document_url": f"data:application/pdf;base64,{base64_pdf}"
             },
-            include_image_base64=True
+            include_image_base64=False
         )
     except Exception as e:
         raise HTTPException(status_code=500, detail=f"OCR processing failed: {e}")
