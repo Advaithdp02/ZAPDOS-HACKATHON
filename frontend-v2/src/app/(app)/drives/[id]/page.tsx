@@ -428,9 +428,9 @@ export default function DriveDetailPage({ params }: { params: { id: string } }) 
   const [drive, setDrive] = useState<Drive | null>(null);
   const [company, setCompany] = useState<Company | null>(null);
   const [loading, setLoading] = useState(true);
-  const driveId = params.id;
 
   useEffect(() => {
+    const driveId = params.id;
     if (!driveId) return;
 
     const fetchData = async () => {
@@ -450,7 +450,7 @@ export default function DriveDetailPage({ params }: { params: { id: string } }) 
         }
     };
     fetchData();
-  }, [driveId]);
+  }, [params.id]);
 
 
   if (loading || !drive) {
