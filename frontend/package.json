@@ -13,6 +13,7 @@
     "axios": "^1.13.2",
     "lucide-react": "^0.553.0",
     "react": "^19.1.1",
+    "react-data-table-component": "^7.7.0",
     "react-dom": "^19.1.1",
     "react-pro-sidebar": "^1.1.0",
     "react-router-dom": "^7.9.5"
