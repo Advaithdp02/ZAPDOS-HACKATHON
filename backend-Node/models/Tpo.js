@@ -7,9 +7,6 @@ const tpoSchema = new mongoose.Schema({
   date_of_birth: { type: Date },
   email: { type: String, required: true, unique: true },
   phone_number: { type: String },
-
-  // If a TPO is associated with a specific department
-  department_id: { type: mongoose.Schema.Types.ObjectId, ref: "Department" },
   photo_url: { type: String },
 
   // Optional reference to Login document

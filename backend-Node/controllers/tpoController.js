@@ -11,7 +11,6 @@ export const createTPO = async (req, res) => {
       date_of_birth,
       email,
       phone_number,
-      department_id,
       photo_url,
       password
     } = req.body;
@@ -30,7 +29,6 @@ export const createTPO = async (req, res) => {
       date_of_birth,
       email,
       phone_number,
-      department_id,
       photo_url
     });
 
@@ -69,7 +67,7 @@ export const getAllTPOs = async (req, res) => {
 // 🔵 GET SINGLE TPO BY ID
 export const getTPOById = async (req, res) => {
   try {
-    const tpo = await Tpo.findById(req.params.id).populate("department_id", "name");
+    const tpo = await Tpo.findById(req.params.id)
     if (!tpo) return res.status(404).json({ message: "TPO not found" });
     res.status(200).json(tpo);
   } catch (error) {
