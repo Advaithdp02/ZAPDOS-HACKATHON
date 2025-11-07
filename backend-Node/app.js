@@ -10,6 +10,8 @@ import tpoRoutes from "./routes/tpoRoutes.js";
 import departmentRoutes from "./routes/departmentRoutes.js";
 import companyRoutes from "./routes/companyRoutes.js"; 
 import jobRoleRoutes from "./routes/jobRoleRoutes.js";
+import studentRoutes from "./routes/studentRoutes.js";
+
 
 const app = express();
 
@@ -25,6 +27,7 @@ app.use("/api/tpo", tpoRoutes);
 app.use("/api/department", departmentRoutes);
 app.use("/api/company", companyRoutes);
 app.use("/api/jobs", jobRoleRoutes);
+app.use("/api/students", studentRoutes);
 // ===== Default Route =====
 app.get("/", (req, res) => {
   res.send("ZapDose Placement Management System API is running 🚀");
