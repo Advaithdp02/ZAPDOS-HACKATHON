@@ -4,26 +4,29 @@ from pydantic import BaseModel
 from bson import ObjectId
 from pymongo import MongoClient
 import gridfs
-import requests
 import os
-from dotenv import load_dotenv
+import base64
 from io import BytesIO
 
+from mistralai import Mistral
+
 # Load environment variables
+from dotenv import load_dotenv
 load_dotenv()
 
 app = FastAPI()
 
 # MongoDB connection
 MONGO_URI = os.getenv("MONGO_URI")
-client = MongoClient(MONGO_URI)
-db = client.get_database()  # Use default DB from URI
+client_db = MongoClient(MONGO_URI)
+db = client_db.get_database()  # default DB from URI
 fs = gridfs.GridFS(db)
 
-# Mistral OCR API
+# Mistral OCR client
 MISTRAL_API_KEY = os.getenv("MISTRAL_API_KEY")
-MISTRAL_OCR_ENDPOINT = "https://api.mistral.ai/v1/ocr"  # Example endpoint (update if needed)
-
+if not MISTRAL_API_KEY:
+    raise RuntimeError("MISTRAL_API_KEY environment variable is required")
+mistral_client = Mistral(api_key=MISTRAL_API_KEY)
 
 class OCRRequest(BaseModel):
     object_id: str
@@ -44,21 +47,21 @@ async def parse_pdf(req: OCRRequest):
 
     pdf_data = file_obj.read()
 
-    # Send to Mistral OCR
-    files = {
-        "file": ("document.pdf", BytesIO(pdf_data), "application/pdf")
-    }
-
-    headers = {
-        "Authorization": f"Bearer {MISTRAL_API_KEY}"
-    }
-
+    # Encode PDF to Base64
     try:
-        response = requests.post(MISTRAL_OCR_ENDPOINT, headers=headers, files=files)
-        response.raise_for_status()
-    except requests.RequestException as e:
-        raise HTTPException(status_code=500, detail=f"OCR request failed: {e}")
+        base64_pdf = base64.b64encode(pdf_data).decode("utf-8")
 
-    ocr_result = response.json()
+        # Send to Mistral OCR directly as base64 data URL
+        ocr_resp = mistral_client.ocr.process(
+            model="mistral-ocr-latest",
+            document={
+                "type": "document_url",
+                "document_url": f"data:application/pdf;base64,{base64_pdf}"
+            },
+            include_image_base64=True
+        )
+    except Exception as e:
+        raise HTTPException(status_code=500, detail=f"OCR processing failed: {e}")
 
-    return JSONResponse(content=ocr_result)
+    # Return OCR response
+    return JSONResponse(content=ocr_resp.model_dump())
