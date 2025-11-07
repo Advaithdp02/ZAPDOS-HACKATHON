@@ -13,7 +13,7 @@ import {
 } from "../controllers/studentController.js";
 
 import { studentProtect } from "../middleware/authMiddleware.js";
-import upload from "../middleware/uploadResume.js";
+import upload from "../utils/uploadResume.js";
 
 const router = express.Router();
 

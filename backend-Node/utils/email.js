@@ -66,4 +66,39 @@ export const templates = {
     `,
     text: `Hi ${studentName},\nAn offer letter for ${jobRole} has been uploaded. Download: ${offerUrl || ""}`,
   }),
+  // utils/email.js (inside templates object)
+driveEnrollment: ({ studentName, jobRole, company, roundUrl }) => ({
+  subject: `Enrolled: ${jobRole} drive at ${company}`,
+  html: `
+    <p>Hi ${studentName},</p>
+    <p>You have successfully <strong>enrolled</strong> in the <strong>${jobRole}</strong> drive at <strong>${company}</strong>.</p>
+    ${roundUrl ? `<p>Track your status: <a href="${roundUrl}">View drive</a></p>` : ""}
+    <p>Best,<br/>Placement Team</p>
+  `,
+  text: `Hi ${studentName},\nYou have enrolled in the ${jobRole} drive at ${company}. Track: ${roundUrl || ""}`
+}),
+
+driveStatusUpdate: ({ studentName, jobRole, roundName, status, remarks, detailsUrl }) => ({
+  subject: `Update: ${jobRole} — ${status}`,
+  html: `
+    <p>Hi ${studentName},</p>
+    <p>Your status for <strong>${jobRole}</strong> — round: <em>${roundName}</em> — has been updated to: <strong>${status}</strong>.</p>
+    ${remarks ? `<p>Remarks: ${remarks}</p>` : ""}
+    ${detailsUrl ? `<p>Details: <a href="${detailsUrl}">View</a></p>` : ""}
+    <p>Regards,<br/>Placement Team</p>
+  `,
+  text: `Hi ${studentName},\nYour status for ${jobRole} (${roundName}) is now: ${status}.\n${remarks || ""}\n${detailsUrl || ""}`
+}),
+
+offerUploaded: ({ studentName, jobRole, offerUrl }) => ({
+  subject: `Offer Letter Uploaded — ${jobRole}`,
+  html: `
+    <p>Hi ${studentName},</p>
+    <p>Congratulations — an offer letter for the role <strong>${jobRole}</strong> has been uploaded.</p>
+    ${offerUrl ? `<p>Download: <a href="${offerUrl}">Your Offer Letter</a></p>` : ""}
+    <p>Best wishes,<br/>Placement Team</p>
+  `,
+  text: `Hi ${studentName},\nAn offer letter for ${jobRole} has been uploaded. Download: ${offerUrl || ""}`
+})
+
 };

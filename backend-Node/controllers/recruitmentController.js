@@ -72,10 +72,11 @@ export const updateCandidateStatus = async (req, res) => {
     const { roundId, studentId } = req.params;
     const { status, remarks } = req.body;
 
+    // 1️⃣ Find the recruitment round
     const round = await RecruitmentRound.findById(roundId);
     if (!round) return res.status(404).json({ message: "Round not found" });
 
-    // Check if student is already in the round
+    // 2️⃣ Update or add candidate entry
     const candidate = round.candidates.find(
       (c) => c.student.toString() === studentId
     );
@@ -89,8 +90,15 @@ export const updateCandidateStatus = async (req, res) => {
 
     await round.save();
 
-    // If selected, update student's placement info
-    const job = await JobRole.findById(round.job_role);
+    // 3️⃣ Fetch job and student details
+    const job = await JobRole.findById(round.job_role).populate("company", "company_name");
+    const student = await Student.findById(studentId);
+
+    if (!student || !job) {
+      return res.status(404).json({ message: "Student or Job not found" });
+    }
+
+    // 4️⃣ Update placement info if selected
     if (status === "Selected") {
       await Student.findByIdAndUpdate(studentId, {
         placed: true,
@@ -99,28 +107,27 @@ export const updateCandidateStatus = async (req, res) => {
       });
     }
 
-    // ✅ Send email notification to student
-    const student = await Student.findById(studentId);
-    if (student && student.email) {
-      const tpl = templates.statusUpdated({
-        studentName: `${student.first_name} ${student.last_name}`,
-        jobRole: job.job_role,
-        roundName: round.round_name,
-        status,
-        remarks,
-        detailsUrl: `${process.env.FRONTEND_URL}/applications/${job._id}`,
-      });
+    // 5️⃣ Send a single email notification
+    const tpl = templates.driveStatusUpdate({
+      studentName: `${student.first_name} ${student.last_name}`,
+      jobRole: job.job_role,
+      roundName: round.round_name,
+      status,
+      remarks,
+      detailsUrl: `${process.env.FRONTEND_URL || ""}/student/my-drives/${job._id}`,
+    });
 
-      sendEmail({ to: student.email, ...tpl }).catch((err) =>
-        console.error("Email failed:", err.message)
-      );
-    }
+    sendEmail({ to: student.email, ...tpl }).catch((err) =>
+      console.error("Email failed:", err.message)
+    );
 
+    // 6️⃣ Return response
     res.status(200).json({
       message: `Candidate status updated to ${status}`,
       round,
     });
   } catch (error) {
+    console.error("Error updating candidate status:", error);
     res.status(500).json({ message: error.message });
   }
 };

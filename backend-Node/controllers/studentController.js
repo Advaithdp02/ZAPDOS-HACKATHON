@@ -4,6 +4,7 @@ import Company from "../models/Company.js";
 import JobRole from "../models/JobRole.js";
 import RecruitmentRound from "../models/RecruitmentRound.js";
 import { sendEmail, templates } from "../utils/email.js";
+
 // 🟢 CREATE STUDENT
 export const createStudent = async (req, res) => {
   try {
@@ -178,10 +179,7 @@ export const getOfferLetters = async (req, res) => {
   } catch (error) {
     res.status(500).json({ message: error.message });
   }};
-  import Student from "../models/Student.js";
-import JobRole from "../models/JobRole.js";
-import RecruitmentRound from "../models/RecruitmentRound.js";
-import { sendEmail, templates } from "../utils/email.js";
+
 
 /* ========================================================
    📄 Upload Resume
@@ -228,32 +226,45 @@ export const enrollInDrive = async (req, res) => {
     const studentId = req.user.id;
     const { jobId } = req.params;
 
-    const job = await JobRole.findById(jobId);
+    const job = await JobRole.findById(jobId).populate("company", "company_name");
     if (!job) return res.status(404).json({ message: "Job not found" });
 
-    // Check eligibility
     const student = await Student.findById(studentId);
-    if (!job.eligible_departments.includes(student.department_id)) {
+    if (!student) return res.status(404).json({ message: "Student not found" });
+
+    // Eligibility check
+    const eligibleDeptIds = job.eligible_departments.map(id => id.toString());
+    if (!eligibleDeptIds.includes(student.department_id.toString())) {
       return res.status(403).json({ message: "Not eligible for this drive" });
     }
 
-    // Register student in the first recruitment round
-    const firstRound = await RecruitmentRound.findOne({ job_role: jobId });
-    if (firstRound) {
+    // Register student in the first round (or create if none)
+    let firstRound = await RecruitmentRound.findOne({ job_role: jobId }).sort({ round_date: 1 });
+    if (!firstRound) {
+      // Optionally create a default "Application" round
+      firstRound = await RecruitmentRound.create({
+        job_role: jobId,
+        round_name: "Application",
+        round_date: new Date(),
+        created_by: req.user.id
+      });
+    }
+    // avoid duplicate enrollment
+    const already = firstRound.candidates.find(c => c.student.toString() === studentId);
+    if (!already) {
       firstRound.candidates.push({ student: studentId, status: "Enrolled" });
       await firstRound.save();
     }
 
-    // Optional email confirmation
-    sendEmail({
-      to: student.email,
-      ...templates.driveEnrollment({
-        studentName: `${student.first_name} ${student.last_name}`,
-        jobRole: job.job_role,
-        company: job.company.company_name,
-        roundUrl: `${process.env.FRONTEND_URL}/student/my-drives/${job._id}`,
-      }),
+    // Send confirmation email (fire-and-forget)
+    const tpl = templates.driveEnrollment({
+      studentName: `${student.first_name} ${student.last_name}`,
+      jobRole: job.job_role,
+      company: job.company?.company_name || "",
+      roundUrl: `${process.env.FRONTEND_URL || ""}/student/my-drives/${job._id}`
     });
+
+    sendEmail({ to: student.email, ...tpl }).catch(err => console.error("Email failed:", err.message));
 
     res.status(200).json({ message: "Enrolled successfully", job });
   } catch (error) {
