@@ -9,10 +9,11 @@ import {
   enrollInDrive,
   getMyDrives,
   getMyDriveStatus,
-  getOfferLetters
+  getOfferLetters,
+  getEligibleStudents
 } from "../controllers/studentController.js";
 
-import { studentProtect } from "../middleware/authMiddleware.js";
+import { authorizeRoles, studentProtect } from "../middleware/authMiddleware.js";
 import upload from "../utils/uploadResume.js";
 
 const router = express.Router();
@@ -61,6 +62,7 @@ router.get("/my-offer", studentProtect, getOfferLetters);
 /* ========================================================
    🧾 ADMIN or TPO Functions (optional)
    ======================================================== */
+   router.get("/eligible/:jobId", authorizeRoles("TPO", "HOD", "Admin"), getEligibleStudents);
 
 // Admin / TPO routes can still manage all students
 router.get("/", getAllStudents);
