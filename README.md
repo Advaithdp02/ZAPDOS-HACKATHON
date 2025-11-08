@@ -1,6 +1,6 @@
-# ZAPDOS-HACKATHON
+## ZAPDOS-HACKATHON
 
-The **ZapDose Connect ** is a modern web application built using **Next.js 14 + TypeScript**.  
+The ** ZapDose Connect ** is a modern web application built using **Next.js 14 + TypeScript**.  
 It provides role-based dashboards for **Students**, **TPOs (Training & Placement Officers)**, and **HODs (Heads of Departments)**  
 to manage and track campus placement activities seamlessly.
 
