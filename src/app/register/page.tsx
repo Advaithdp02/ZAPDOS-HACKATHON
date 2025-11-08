@@ -88,7 +88,7 @@ export default function RegisterPage() {
           <Logo className="h-12 w-12" />
           <h1 className="text-3xl font-bold text-center">Create Your Account</h1>
           <p className="text-muted-foreground text-center">
-            Join CampusConnect to start your career journey.
+            Join ZapDosConnect to start your career journey.
           </p>
         </div>
         <Card>

@@ -20,7 +20,7 @@ const fontSourceCodePro = Source_Code_Pro({
 });
 
 export const metadata: Metadata = {
-  title: "CampusConnect",
+  title: "ZapDosConnect",
   description: "A College Placement Management Portal",
 };
 
