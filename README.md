@@ -1,5 +1,77 @@
 # ZAPDOS-HACKATHON
 
+The **ZapDose Connect Frontend** is a modern web application built using **Next.js 14 + TypeScript**.  
+It provides role-based dashboards for **Students**, **TPOs (Training & Placement Officers)**, and **HODs (Heads of Departments)**  
+to manage and track campus placement activities seamlessly.
+
+---
+
+## 🚀 Tech Stack
+
+| Technology | Purpose |
+|-------------|----------|
+| **Next.js 14 (App Router)** | Server components, routing, and rendering |
+| **TypeScript** | Strong typing and maintainability |
+| **Tailwind CSS + shadcn/ui** | Modern, consistent UI components |
+| **Lucide Icons** | Beautiful vector icons |
+| **Recharts** | Interactive charts and graphs |
+| **Next Auth (Custom)** | Role-based authentication |
+| **MongoDB API Integration** | Real-time data from backend APIs |
+
+---
+## 🧩 Role-Based Dashboards
+
+### 👨‍🎓 Student Dashboard
+> Personalized dashboard for students to view their placement journey and active opportunities.
+
+**Features**
+- Track **applications**, **offers**, and **active drives**
+- View **recent application statuses**
+- Explore and apply for **available drives**
+- Skeleton loaders for smooth transitions during data fetch
+
+**Preview**
+![Student Dashboard Preview](./assets/student-dashboard.png)
+
+---
+
+### 🧑‍💼 TPO Dashboard
+> Administrative interface for managing drives, applications, and placement statistics.
+
+**Features**
+- Create and manage **placement drives**
+- Track **applications** and **offers** across drives
+- View **drive performance** with bar charts
+- Quick actions: **Email Generator** and **Drive Creation**
+- Monitor **active drives** and **placement reports**
+
+**Charts**
+- Drive-wise Applications vs Placed Students
+- Offers and Active Drives Summary
+
+**Preview**
+![TPO Dashboard Preview](./assets/tpo-dashboard.png)
+
+---
+
+### 👩‍🏫 HOD Dashboard
+> Department-level view to monitor placement activities and approve student registrations.
+
+**Features**
+- Track total **students**, **placement rate**, and **offers**
+- View **Placed vs. Unplaced** charts
+- Monitor **application statuses** with pie charts
+- Manage **pending student approvals** efficiently
+
+**Charts**
+- Placement Overview (Bar)
+- Application Status Breakdown (Pie)
+
+**Preview**
+![HOD Dashboard Preview](./assets/hod-dashboard.png)
+
+---
+
 # 🏫 ZAPDOS Connect Backend
 
 A **Next.js server-side backend** that connects to a **MongoDB database** for managing users, companies, student profiles, recruitment drives, applications, and reports in a **campus recruitment system**.
