@@ -1,12 +1,23 @@
 import mongoose from "mongoose";
 
-const departmentSchema = new mongoose.Schema({
-  name: { type: String, required: true, unique: true }, // e.g., CSE, ECE, ME
-  code: { type: String, required: true, unique: true }, // short code like CSE, ECE
-  hod: { type: mongoose.Schema.Types.ObjectId, ref: "Hod" }, // optional HOD reference
-  created_at: { type: Date, default: Date.now },
-  updated_at: { type: Date, default: Date.now }
-});
+const departmentSchema = new mongoose.Schema(
+  {
+    name: {
+      type: String,
+      required: true,
+      unique: true,
+      trim: true,
+    },
+    hodId: {
+      type: mongoose.Schema.Types.ObjectId,
+      ref: "User", // Reference to HOD (User with role: 'hod')
+      default: null,
+    },
+  },
+  {
+    timestamps: true,
+  }
+);
 
 const Department = mongoose.model("Department", departmentSchema);
 

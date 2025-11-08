@@ -1,27 +1,15 @@
 import express from "express";
 import {
   createDepartment,
-  getAllDepartments,
-  getDepartmentById,
-  updateDepartment,
-  deleteDepartment
+  getDepartments,
+  assignHOD,
 } from "../controllers/departmentController.js";
 
 const router = express.Router();
 
-// 🟢 CREATE Department
+// Department Routes
 router.post("/", createDepartment);
-
-// 🟡 GET ALL Departments
-router.get("/", getAllDepartments);
-
-// 🔵 GET SINGLE Department
-router.get("/:id", getDepartmentById);
-
-// 🟠 UPDATE Department
-router.put("/:id", updateDepartment);
-
-// 🔴 DELETE Department
-router.delete("/:id", deleteDepartment);
+router.get("/", getDepartments);
+router.put("/:id/assign-hod", assignHOD);
 
 export default router;

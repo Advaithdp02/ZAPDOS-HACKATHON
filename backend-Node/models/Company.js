@@ -1,20 +1,47 @@
 import mongoose from "mongoose";
 
-const companySchema = new mongoose.Schema({
-  company_name: { type: String, required: true, unique: true },
-  industry_type: { type: String },
-  email: { type: String },
-  phone_number: { type: String },
-  website: { type: String },
-  address: { type: String },
-  city: { type: String },
-  state: { type: String },
-  country: { type: String },
-
-  // List of JobRole references
-  jobs: [{ type: mongoose.Schema.Types.ObjectId, ref: "JobRole" }]
-
-}, { timestamps: true });
+const companySchema = new mongoose.Schema(
+  {
+    id: {
+      type: String,
+      required: true,
+      unique: true,
+    },
+    name: {
+      type: String,
+      required: true,
+      trim: true,
+    },
+    logoUrl: {
+      type: String,
+      default: "/logos/default.svg",
+    },
+    industryType: {
+      type: String,
+      required: true,
+      trim: true,
+    },
+    email: {
+      type: String,
+      required: true,
+      lowercase: true,
+      trim: true,
+    },
+    phone: {
+      type: String,
+      required: true,
+      trim: true,
+    },
+    location: {
+      type: String,
+      required: true,
+      trim: true,
+    },
+  },
+  {
+    timestamps: true,
+  }
+);
 
 const Company = mongoose.model("Company", companySchema);
 
