@@ -14,8 +14,6 @@ import { Menu } from 'lucide-react';
 import { cn } from "@/lib/utils";
 import { TooltipProvider } from "@/components/ui/tooltip";
 
-export const dynamic = 'force-dynamic';
-
 export default function AppLayout({ children }: { children: React.ReactNode }) {
   const { user, loading } = useAuth();
   const router = useRouter();

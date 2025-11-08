@@ -34,7 +34,7 @@ import { Skeleton } from "../ui/skeleton";
 
 
 const COLORS = ["hsl(var(--chart-1))", "hsl(var(--chart-2))", "hsl(var(--chart-3))", "hsl(var(--chart-4))", "hsl(var(--chart-5))"];
-
+const getCurrentStatus = (app: Application) => app.statusUpdates[app.statusUpdates.length - 1].status;
 
 export function HodDashboard() {
   const { user } = useAuth();
@@ -70,7 +70,7 @@ export function HodDashboard() {
   }, [user]);
   
   const dashboardStats = useMemo(() => {
-    const offers = departmentApplications.filter((a) => a.status.toLowerCase() === "offered");
+    const offers = departmentApplications.filter((a) => getCurrentStatus(a).toLowerCase() === "offered");
     const placedStudentIds = new Set(offers.map(o => o.studentId));
     const placedCount = placedStudentIds.size;
     const unplacedCount = departmentStudents.length - placedCount;
@@ -82,12 +82,13 @@ export function HodDashboard() {
     ];
 
     const applicationStatusData = departmentApplications.reduce((acc, app) => {
-      const status = app.status.charAt(0).toUpperCase() + app.status.slice(1);
-      const existing = acc.find(item => item.name === status);
+      const status = getCurrentStatus(app);
+      const capitalizedStatus = status.charAt(0).toUpperCase() + status.slice(1);
+      const existing = acc.find(item => item.name === capitalizedStatus);
       if(existing) {
           existing.value += 1;
       } else {
-          acc.push({ name: status, value: 1 });
+          acc.push({ name: capitalizedStatus, value: 1 });
       }
       return acc;
     }, [] as {name: string, value: number}[]);

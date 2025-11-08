@@ -3,43 +3,43 @@
     {
       "id": "user1",
       "description": "User avatar 1",
-      "imageUrl": "https://images.unsplash.com/photo-1570295999919-56ceb5ecca61?q=80&w=1160&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "imageUrl": "/images/user1.jpg",
       "imageHint": "person face"
     },
     {
       "id": "user2",
       "description": "User avatar 2",
-      "imageUrl": "https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?q=80&w=1160&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "imageUrl": "/images/user2.jpg",
       "imageHint": "person face"
     },
     {
       "id": "user3",
       "description": "User avatar 3",
-      "imageUrl": "https://images.unsplash.com/photo-1494790108377-be9c29b29330?q=80&w=987&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "imageUrl": "/images/user3.jpg",
       "imageHint": "person face"
     },
     {
       "id": "user4",
       "description": "User avatar 4",
-      "imageUrl": "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=987&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "imageUrl": "/images/user4.jpg",
       "imageHint": "person face"
     },
     {
       "id": "ats-resume",
       "description": "ATS resume preview",
-      "imageUrl": "https://images.unsplash.com/photo-1586281380349-632531db7ed4?q=80&w=1160&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "imageUrl": "/images/ats-resume.webp",
       "imageHint": "ATS resume"
     },
     {
       "id": "minimalist-resume",
       "description": "Minimalist resume preview",
-      "imageUrl": "https://images.unsplash.com/photo-1518773553398-650c184e0bb3?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "imageUrl": "/images/minimalist-resume.webp",
       "imageHint": "minimalist resume"
     },
     {
       "id": "graphical-resume",
       "description": "Graphical resume preview",
-      "imageUrl": "https://images.unsplash.com/photo-1521791136064-7986c2920216?q=80&w=1169&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "imageUrl": "/images/graphical-resume.webp",
       "imageHint": "graphical resume"
     }
   ]

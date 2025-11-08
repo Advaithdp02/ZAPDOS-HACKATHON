@@ -1,3 +1,4 @@
+
 "use client";
 
 import { createContext, useState, useEffect, ReactNode, useMemo } from 'react';
@@ -29,9 +30,33 @@ export function AuthProvider({ children }: { children: ReactNode }) {
   }, []);
 
   useEffect(() => {
-    if (!loading && !user && pathname !== '/') {
-      router.push('/');
-    }
+    const checkUserSession = async () => {
+      if (loading) return;
+
+      if (!user) {
+        if (pathname !== '/') {
+          router.push('/');
+        }
+        return;
+      }
+      
+      // If user object exists, verify it's still valid against the database
+      try {
+        const profile = await api.getStudentProfile(user.id);
+        // A special case for the profile-less HOD and TPO roles
+        const isNonStudentRole = user.role === 'hod' || user.role === 'tpo';
+        
+        if (!profile && !isNonStudentRole) {
+          // Profile doesn't exist, and it's a student. This is an invalid session.
+          console.error("Session invalid: User profile not found. Logging out.");
+          logout();
+        }
+      } catch (e) {
+        console.error("Error validating user session, logging out.", e);
+        logout();
+      }
+    };
+    checkUserSession();
   }, [user, loading, pathname, router]);
 
 
@@ -58,6 +83,7 @@ export function AuthProvider({ children }: { children: ReactNode }) {
     loading
   }), [user, loading]);
 
+  // Don't render children until loading is complete and user is verified or redirected.
   if (loading) {
     return (
       <div className="flex items-center justify-center min-h-screen">

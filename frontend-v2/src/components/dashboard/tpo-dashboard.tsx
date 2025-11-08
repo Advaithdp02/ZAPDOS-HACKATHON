@@ -35,6 +35,8 @@ const chartConfig = {
   },
 } satisfies ChartConfig;
 
+const getCurrentStatus = (app: Application) => app.statusUpdates[app.statusUpdates.length - 1].status;
+
 export function TpoDashboard() {
   const { user } = useAuth();
   const [drives, setDrives] = useState<Drive[]>([]);
@@ -66,15 +68,15 @@ export function TpoDashboard() {
 
   const dashboardStats = useMemo(() => {
     const totalDrives = drives.length;
-    const totalOffers = applications.filter(a => a.status.toLowerCase() === 'offered').length;
-    const placedStudents = new Set(applications.filter(a => a.status.toLowerCase() === 'offered').map(a => a.studentId)).size;
+    const totalOffers = applications.filter(a => getCurrentStatus(a).toLowerCase() === 'offered').length;
+    const placedStudents = new Set(applications.filter(a => getCurrentStatus(a).toLowerCase() === 'offered').map(a => a.studentId)).size;
 
     const driveStats = drives.map(drive => {
         const driveApps = applications.filter(app => app.driveId === drive.id);
         return {
             name: drive.title.substring(0, 15) + (drive.title.length > 15 ? "..." : ""),
             applications: driveApps.length,
-            placed: driveApps.filter(app => app.status.toLowerCase() === 'offered').length,
+            placed: driveApps.filter(app => getCurrentStatus(app).toLowerCase() === 'offered').length,
         }
     });
 
@@ -183,5 +185,3 @@ export function TpoDashboard() {
     </div>
   );
 }
-
-    

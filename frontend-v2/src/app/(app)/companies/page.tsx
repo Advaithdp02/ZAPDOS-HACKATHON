@@ -1,4 +1,5 @@
 
+
 "use client";
 
 import { useAuth } from "@/hooks/use-auth";
@@ -92,7 +93,7 @@ export default function CompaniesPage() {
         setFormState(initialFormState);
         fetchData();
     } catch (err) {
-        toast({ variant: "destructive", title: "Failed to add company" });
+        toast({ variant: "destructive", title: "Failed to add company", description: "Could not add company to the database." });
     }
   }
 

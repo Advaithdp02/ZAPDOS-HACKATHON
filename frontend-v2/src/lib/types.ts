@@ -46,12 +46,17 @@ export type CreateDrive = Omit<Drive, 'id' | 'status' | 'applications'>;
 
 export type ApplicationStatus = string;
 
+export type StatusUpdate = {
+  status: ApplicationStatus;
+  date: string;
+  notes?: string;
+};
+
 export type Application = {
   id: string;
   studentId: string;
   driveId: string;
-  status: ApplicationStatus;
-  statusUpdates: { status: ApplicationStatus; date: string; notes?: string }[];
+  statusUpdates: StatusUpdate[];
   resumeUrl: string;
   appliedDate: string;
   coverLetter?: string;
@@ -98,6 +103,8 @@ export type StudentProfile = {
   education: EducationItem[];
   experience: ExperienceItem[];
   certifications: CertificationItem[];
+  registrationStatus?: "Pending" | "Approved" | "Rejected";
 };
 
 export type Department = "Computer Science" | "Electronics" | "Mechanical" | "Civil";
+    

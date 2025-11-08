@@ -30,7 +30,6 @@ const roleNavLinks: Record<
     { href: "/companies", label: "Companies", icon: Building },
     { href: "/verifications", label: "Verifications", icon: ShieldCheck },
     { href: "/reports", label: "Reports", icon: BarChart },
-    { href: "/tools/email-generator", label: "Email Generator", icon: Mail },
   ],
   hod: [
     { href: "/dashboard", label: "Dashboard", icon: LayoutDashboard },

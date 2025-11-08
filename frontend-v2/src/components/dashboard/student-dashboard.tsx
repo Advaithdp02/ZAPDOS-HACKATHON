@@ -27,6 +27,8 @@ import { PageHeader } from "../page-header";
 import { useState, useEffect, useMemo } from "react";
 import { Skeleton } from "../ui/skeleton";
 
+const getCurrentStatus = (app: Application) => app.statusUpdates[app.statusUpdates.length - 1].status;
+
 const getStatusVariant = (status: string): "default" | "secondary" | "destructive" | "outline" => {
     const lowerCaseStatus = status.toLowerCase();
     if (lowerCaseStatus.includes('offer')) return 'default';
@@ -108,7 +110,7 @@ export function StudentDashboard() {
             <CardTitle>Offers Received</CardTitle>
           </CardHeader>
           <CardContent>
-            <div className="text-4xl font-bold">{myApplications.filter(a => a.status.toLowerCase() === 'offered').length}</div>
+            <div className="text-4xl font-bold">{myApplications.filter(a => getCurrentStatus(a).toLowerCase() === 'offered').length}</div>
              <p className="text-xs text-muted-foreground">Congratulations on your success!</p>
           </CardContent>
         </Card>
@@ -148,12 +150,13 @@ export function StudentDashboard() {
                  const drive = getDriveById(app.driveId);
                  if (!drive) return null;
                  const company = getCompanyById(drive.companyId);
+                 const currentStatus = getCurrentStatus(app);
                  return (
                     <TableRow key={app.id}>
                         <TableCell>{company?.name}</TableCell>
                         <TableCell>{drive.title}</TableCell>
                         <TableCell>
-                            <Badge variant={getStatusVariant(app.status)} className="capitalize">{app.status}</Badge>
+                            <Badge variant={getStatusVariant(currentStatus)} className="capitalize">{currentStatus}</Badge>
                         </TableCell>
                         <TableCell>{new Date(app.appliedDate).toLocaleDateString()}</TableCell>
                     </TableRow>

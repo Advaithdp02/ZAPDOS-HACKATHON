@@ -13,7 +13,7 @@ import {
 } from "@/components/ui/card";
 import { Textarea } from "@/components/ui/textarea";
 import { useToast } from "@/hooks/use-toast";
-import { Loader2, Sparkles, Copy, Info } from "lucide-react";
+import { Loader2, Sparkles, Download, Info } from "lucide-react";
 import { PageHeader } from "@/components/page-header";
 import { Label } from "@/components/ui/label";
 import { Input } from "@/components/ui/input";
@@ -28,6 +28,8 @@ import {
 } from "@/components/ui/tooltip";
 import Image from "next/image";
 import { PlaceHolderImages } from "@/lib/placeholder-images";
+import ReactMarkdown from "react-markdown";
+import rehypeRaw from "rehype-raw";
 
 export default function ResumeBuilderPage() {
   const { user } = useAuth();
@@ -93,27 +95,23 @@ export default function ResumeBuilderPage() {
     }
   };
 
-  const handleCopy = () => {
-    navigator.clipboard.writeText(formattedResume);
-    toast({
-      title: "Copied to Clipboard",
-      description: "The formatted resume has been copied.",
-    });
+  const handleDownload = () => {
+    window.print();
   };
 
   const resumePreviews = {
     ATS: {
-      src: PlaceHolderImages.find(p => p.id === 'ats-resume')?.imageUrl || `https://picsum.photos/seed/ats-resume/300/400`,
+      src: PlaceHolderImages.find(p => p.id === 'ats-resume')?.imageUrl || "/images/ats-resume.webp",
       hint: "ATS resume",
       description: "A clean, single-column resume optimized for applicant tracking systems.",
     },
     Minimalist: {
-      src: PlaceHolderImages.find(p => p.id === 'minimalist-resume')?.imageUrl || `https://picsum.photos/seed/minimalist-resume/300/400`,
+      src: PlaceHolderImages.find(p => p.id === 'minimalist-resume')?.imageUrl || `/images/minimalist-resume.webp`,
       hint: "minimalist resume",
       description: "An elegant, simple design with a focus on typography and whitespace.",
     },
     Graphical: {
-      src: PlaceHolderImages.find(p => p.id === 'graphical-resume')?.imageUrl || `https://picsum.photos/seed/graphical-resume/300/400`,
+      src: PlaceHolderImages.find(p => p.id === 'graphical-resume')?.imageUrl || `/images/graphical-resume.webp`,
       hint: "graphical resume",
       description: "A creative layout that uses visual elements to highlight skills and experience.",
     },
@@ -225,7 +223,7 @@ export default function ResumeBuilderPage() {
           </form>
         </div>
         <div className="md:col-span-2">
-          <Card className="min-h-[600px]">
+          <Card className="min-h-[600px] overflow-hidden">
             <CardHeader className="flex flex-row items-center justify-between">
               <div>
                 <CardTitle>Formatted Resume</CardTitle>
@@ -235,8 +233,8 @@ export default function ResumeBuilderPage() {
               </div>
               {formattedResume && (
                 <div className="flex gap-2">
-                  <Button variant="outline" size="icon" onClick={handleCopy}>
-                    <Copy className="h-4 w-4" />
+                  <Button variant="outline" size="icon" onClick={handleDownload}>
+                    <Download className="h-4 w-4" />
                   </Button>
                 </div>
               )}
@@ -248,8 +246,8 @@ export default function ResumeBuilderPage() {
                 </div>
               )}
               {formattedResume && (
-                <div className="prose prose-sm dark:prose-invert max-w-none p-4 border rounded-lg bg-muted/20 whitespace-pre-wrap font-mono text-xs">
-                  {formattedResume}
+                <div id="resume-container" className="w-full aspect-[210/297] scale-100 origin-top-left border bg-background shadow-lg">
+                  <ReactMarkdown rehypePlugins={[rehypeRaw]}>{formattedResume}</ReactMarkdown>
                 </div>
               )}
               {!loading && !formattedResume && (

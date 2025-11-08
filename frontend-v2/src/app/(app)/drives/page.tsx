@@ -467,7 +467,7 @@ function StudentDrivesView() {
                     api.getStudentProfile(user.id),
                     api.getApplicationsByStudentId(user.id),
                 ]);
-                setAllDrives(drivesData.filter(d => d.status === 'active' || d.status === 'ongoing'));
+                setAllDrives(drivesData.filter(d => d.status === 'active' || d.status === 'ongoing' || d.status === 'upcoming'));
                 setCompanies(companiesData);
                 setStudentProfile(profileData || null);
                 setStudentApplications(applicationsData);
@@ -593,5 +593,7 @@ export default function DrivesPage() {
 
   return user.role === "tpo" ? <TpoDrivesView /> : <StudentDrivesView />;
 }
+
+    
 
     

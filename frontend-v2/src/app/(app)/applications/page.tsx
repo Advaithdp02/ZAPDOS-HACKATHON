@@ -3,9 +3,9 @@
 
 import { useEffect, useState } from "react";
 import { useAuth } from "@/hooks/use-auth";
-import { notFound } from "next/navigation";
+import { notFound, usePathname } from "next/navigation";
 import * as api from "@/lib/api";
-import type { Application, Drive, Company, ApplicationStatus } from "@/lib/types";
+import type { Application, Drive, Company, StatusUpdate } from "@/lib/types";
 import { PageHeader } from "@/components/page-header";
 import {
   Card,
@@ -26,10 +26,14 @@ import {
   DialogTrigger,
 } from "@/components/ui/dialog";
 
+// Helper function to get current status
+const getCurrentStatus = (app: Application) => app.statusUpdates[app.statusUpdates.length - 1].status;
+
 // Combine application with its drive and company for easier use
 type FullApplication = Application & {
   drive: Drive;
   company: Company;
+  currentStatus: string;
 };
 
 const REJECTED_STATUS = "Rejected";
@@ -38,13 +42,12 @@ const OFFERED_STATUS = "Offered";
 
 function StatusTimeline({ application }: { application: FullApplication }) {
     const statusHierarchy = application.drive.stages || [];
-    const currentStatusIndex = statusHierarchy.findIndex(s => s.toLowerCase() === application.status.toLowerCase());
+    const currentStatusIndex = statusHierarchy.findIndex(s => s.toLowerCase() === application.currentStatus.toLowerCase());
 
-    const isRejected = application.status.toLowerCase().includes(REJECTED_STATUS.toLowerCase());
+    const isRejected = application.currentStatus.toLowerCase().includes(REJECTED_STATUS.toLowerCase());
     
     if (isRejected) {
-      // Find the stage where rejection happened, if available from notes or last known status.
-      // This is a simplified logic. A real app might have a dedicated `rejectedAtStage` field.
+      // Find the stage where rejection happened.
       const lastCompletedIndex = (application.statusUpdates.length > 1) 
           ? statusHierarchy.findIndex(s => s.toLowerCase() === application.statusUpdates[application.statusUpdates.length - 2].status.toLowerCase())
           : -1;
@@ -53,6 +56,7 @@ function StatusTimeline({ application }: { application: FullApplication }) {
         <div className="flex items-center space-x-2 md:space-x-4 overflow-x-auto pb-4">
           {statusHierarchy.slice(0, lastCompletedIndex + 2).map((status, index) => {
             const isCompleted = index < lastCompletedIndex + 1;
+            const isRejectionPoint = index === lastCompletedIndex + 1;
             return (
               <div key={status} className="flex-1 flex flex-col items-center text-center min-w-[100px]">
                 <div className={cn(
@@ -62,7 +66,7 @@ function StatusTimeline({ application }: { application: FullApplication }) {
                     {isCompleted ? <CheckCircle className="h-5 w-5" /> : <Circle className="h-5 w-5" />}
                 </div>
                 <div className="mt-2">
-                    <p className={cn("text-sm font-medium capitalize", isCompleted ? "text-primary" : "text-destructive")}>{isCompleted ? status : 'Rejected'}</p>
+                    <p className={cn("text-sm font-medium capitalize", isCompleted ? "text-primary" : "text-destructive")}>{isRejectionPoint ? 'Rejected' : status}</p>
                 </div>
               </div>
             );
@@ -70,7 +74,6 @@ function StatusTimeline({ application }: { application: FullApplication }) {
         </div>
       );
     }
-
 
     return (
         <div className="flex items-center space-x-2 md:space-x-4 overflow-x-auto pb-4">
@@ -112,9 +115,11 @@ export default function ApplicationsPage() {
   const { user } = useAuth();
   const [applications, setApplications] = useState<FullApplication[]>([]);
   const [loading, setLoading] = useState(true);
+  const pathname = usePathname();
 
   useEffect(() => {
     if (user && user.role === 'student') {
+      setLoading(true);
       const fetchData = async () => {
         try {
           const [apps, drives, companies] = await Promise.all([
@@ -125,9 +130,18 @@ export default function ApplicationsPage() {
 
           const fullApps = apps.map(app => {
             const drive = drives.find(d => d.id === app.driveId);
-            const company = drive ? companies.find(c => c.id === drive.companyId) : undefined;
-            return { ...app, drive, company };
-          }).filter(app => app.drive && app.company) as FullApplication[];
+            if (!drive) {
+                console.warn(`Drive with id ${app.driveId} not found for application ${app.id}`);
+                return null;
+            }
+            const company = companies.find(c => c.id === drive.companyId);
+            if (!company) {
+                 console.warn(`Company with id ${drive.companyId} not found for drive ${drive.id}`);
+                 return null;
+            }
+            const currentStatus = getCurrentStatus(app);
+            return { ...app, drive, company, currentStatus };
+          }).filter(app => app !== null) as FullApplication[];
           
           setApplications(fullApps);
         } catch (error) {
@@ -138,7 +152,7 @@ export default function ApplicationsPage() {
       };
       fetchData();
     }
-  }, [user]);
+  }, [user, pathname]);
 
   if (!user || user.role !== 'student') {
     notFound();
@@ -148,8 +162,10 @@ export default function ApplicationsPage() {
     return (
       <div className="space-y-6">
         <PageHeader title="My Applications" description="Track the status of all your job applications." />
-        <Skeleton className="h-48 w-full" />
-        <Skeleton className="h-48 w-full" />
+        <div className="space-y-4">
+          <Skeleton className="h-48 w-full" />
+          <Skeleton className="h-48 w-full" />
+        </div>
       </div>
     );
   }
@@ -184,10 +200,10 @@ export default function ApplicationsPage() {
                         </DialogContent>
                       </Dialog>
                     )}
-                    {app.status.toLowerCase() === OFFERED_STATUS.toLowerCase() && (
+                    {app.currentStatus.toLowerCase() === OFFERED_STATUS.toLowerCase() && (
                       <Button><Download className="mr-2 h-4 w-4" /> Download Offer</Button>
                     )}
-                    {app.status.toLowerCase().includes(REJECTED_STATUS.toLowerCase()) && (
+                    {app.currentStatus.toLowerCase().includes(REJECTED_STATUS.toLowerCase()) && (
                       <div className="px-3 py-1.5 text-sm font-semibold rounded-full bg-destructive text-destructive-foreground">Rejected</div>
                     )}
                   </div>

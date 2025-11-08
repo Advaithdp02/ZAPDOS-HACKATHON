@@ -1,3 +1,4 @@
+
 "use client";
 
 import { useState } from "react";
@@ -16,11 +17,12 @@ import { Label } from "@/components/ui/label";
 import { useToast } from "@/hooks/use-toast";
 import { Logo } from "@/components/logo";
 import { Alert, AlertDescription, AlertTitle } from "@/components/ui/alert";
-import { Terminal } from "lucide-react";
+import { Terminal, DatabaseZap, Loader2 } from "lucide-react";
 
 export default function LoginPage() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const [isReseeding, setIsReseeding] = useState(false);
   const { login } = useAuth();
   const router = useRouter();
   const { toast } = useToast();
@@ -43,8 +45,40 @@ export default function LoginPage() {
     }
   };
 
+  const handleReseedDatabase = async () => {
+    setIsReseeding(true);
+    toast({
+      title: "Resetting Database...",
+      description: "This may take a moment. Please wait.",
+    });
+    try {
+      const response = await fetch('/api/reseed', { method: 'POST' });
+      const result = await response.json();
+      if (!response.ok) {
+        throw new Error(result.error || 'Failed to reset database');
+      }
+      toast({
+        title: "Database Reset Successfully",
+        description: "The database has been cleared and re-seeded with test data.",
+      });
+      // Clear session storage to force re-login with new user IDs
+      sessionStorage.clear();
+      // Optionally, reload the page to get a clean state
+      window.location.reload();
+    } catch (error) {
+      const errorMessage = error instanceof Error ? error.message : "An unknown error occurred.";
+      toast({
+        variant: "destructive",
+        title: "Database Reset Failed",
+        description: errorMessage,
+      });
+    } finally {
+      setIsReseeding(false);
+    }
+  };
+
   return (
-    <main className="flex items-center justify-center min-h-screen bg-background p-4">
+    <main className="relative flex items-center justify-center min-h-screen bg-background p-4">
       <div className="w-full max-w-md space-y-8">
         <div className="flex flex-col items-center gap-4">
           <Logo className="h-12 w-12" />
@@ -100,6 +134,13 @@ export default function LoginPage() {
             </div>
           </AlertDescription>
         </Alert>
+      </div>
+
+       <div className="absolute bottom-4 right-4">
+        <Button variant="destructive" onClick={handleReseedDatabase} disabled={isReseeding}>
+          {isReseeding ? <Loader2 className="animate-spin"/> : <DatabaseZap />}
+          {isReseeding ? "Resetting..." : "Reset Database"}
+        </Button>
       </div>
     </main>
   );

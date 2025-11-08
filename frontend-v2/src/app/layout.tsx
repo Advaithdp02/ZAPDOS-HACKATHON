@@ -1,9 +1,13 @@
+
 import type { Metadata } from "next";
 import { Inter, Source_Code_Pro } from "next/font/google";
 import "./globals.css";
+import "./print.css";
 import { Toaster } from "@/components/ui/toaster";
 import { AuthProvider } from "@/contexts/auth-context";
 import { cn } from "@/lib/utils";
+
+export const dynamic = 'force-dynamic';
 
 const fontInter = Inter({
   subsets: ["latin"],

@@ -46,13 +46,7 @@ import { Textarea } from "@/components/ui/textarea";
 import { EmailGenerator, type EmailGeneratorProps } from "@/components/email-generator";
 
 
-const statusVariantMap: Record<string, "default" | "secondary" | "destructive" | "outline"> = {
-    applied: "secondary",
-    shortlisted: "outline",
-    interview: "outline",
-    offered: "default",
-    rejected: "destructive",
-};
+const getCurrentStatus = (app: Application) => app.statusUpdates[app.statusUpdates.length - 1].status;
 
 function TpoDriveDetailView({ drive, company }: { drive: Drive, company?: Company }) {
   const [applications, setApplications] = useState<Application[]>([]);
@@ -68,8 +62,9 @@ function TpoDriveDetailView({ drive, company }: { drive: Drive, company?: Compan
             setApplications(appData);
             
             if (appData.length > 0) {
+              const studentIds = [...new Set(appData.map(app => app.studentId))];
               const studentData = await Promise.all(
-                  appData.map(app => api.getStudentProfile(app.studentId))
+                  studentIds.map(id => api.getStudentProfileByStudentId(id))
               );
               setStudents(studentData.filter((s): s is StudentProfile => !!s));
             }
@@ -147,7 +142,8 @@ function TpoDriveDetailView({ drive, company }: { drive: Drive, company?: Compan
                 applications.map((app) => {
                 const student = getStudent(app.studentId);
                 if (!student) return null;
-                const nextStage = getNextStage(app.status);
+                const currentStatus = getCurrentStatus(app);
+                const nextStage = getNextStage(currentStatus);
                 return (
                   <TableRow key={app.id}>
                     <TableCell>
@@ -162,16 +158,16 @@ function TpoDriveDetailView({ drive, company }: { drive: Drive, company?: Compan
                     <TableCell>{student.department}</TableCell>
                     <TableCell>{student.cgpa}</TableCell>
                     <TableCell>
-                      <Badge variant={getStatusVariant(app.status)} className="capitalize">{app.status}</Badge>
+                      <Badge variant={getStatusVariant(currentStatus)} className="capitalize">{currentStatus}</Badge>
                     </TableCell>
                     <TableCell className="text-right space-x-2">
-                        {nextStage && !app.status.toLowerCase().includes('reject') && (
+                        {nextStage && !currentStatus.toLowerCase().includes('reject') && (
                             <Button variant="outline" size="sm" onClick={() => handleOpenEmailGenerator(student, nextStage)}>
                                 <Mail className="mr-2 h-4 w-4" />
                                 Promote to {nextStage}
                             </Button>
                         )}
-                        {!app.status.toLowerCase().includes('reject') && !app.status.toLowerCase().includes('offer') &&(
+                        {!currentStatus.toLowerCase().includes('reject') && !currentStatus.toLowerCase().includes('offer') &&(
                              <Button variant="destructive" size="sm" onClick={() => handleOpenEmailGenerator(student, 'Rejection Email')}>
                                 <X className="mr-2 h-4 w-4"/>
                                 Reject
