@@ -116,13 +116,13 @@ A **HOD** monitors students’ academic and placement status, approves registrat
    HODDashboard                   getPendingApprovals()         applications
 ```
 ## 📈 Example System Flow
-
+```text
 Student registers → HOD approves profile → TPO verifies → Company drive created
         ↓                         ↓                        ↓
    Student applies           Application added         TPO reviews status
         ↓                         ↓                        ↓
   Offer generated ← Application updated ← Drive statistics refreshed
-
+```
 
 ## 🚀 Tech Stack
 
