@@ -48,7 +48,7 @@ export default function AppLayout({ children }: { children: React.ReactNode }) {
             <div className="flex h-14 items-center border-b px-4 lg:h-[60px] lg:px-6">
               <Link href="/" className="flex items-center gap-2 font-semibold">
                 <Logo className="h-6 w-6" />
-                <span className={cn(isSidebarCollapsed && "hidden")}>CampusConnect</span>
+                <span className={cn(isSidebarCollapsed && "hidden")}>ZapDosConnect</span>
               </Link>
             </div>
             <div className="flex-1">
@@ -78,7 +78,7 @@ export default function AppLayout({ children }: { children: React.ReactNode }) {
                     className="flex items-center gap-2 text-lg font-semibold mb-4"
                   >
                     <Logo className="h-6 w-6" />
-                    <span className="">CampusConnect</span>
+                    <span className="">ZapDosConnect</span>
                   </Link>
                   <MainNav isCollapsed={false}/>
                 </nav>

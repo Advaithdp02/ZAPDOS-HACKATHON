@@ -102,7 +102,7 @@ export default function LoginPage() {
       <div className="w-full max-w-md space-y-8">
         <div className="flex flex-col items-center gap-4">
           <Logo className="h-12 w-12" />
-          <h1 className="text-3xl font-bold text-center">CampusConnect</h1>
+          <h1 className="text-3xl font-bold text-center">ZapDosConnect</h1>
           <p className="text-muted-foreground text-center">
             Your bridge between college and career.
           </p>

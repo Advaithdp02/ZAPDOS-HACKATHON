@@ -120,7 +120,7 @@ export function EmailGenerator(props: EmailGeneratorProps) {
   const getMailtoLink = () => {
     if (!generatedEmail) return "";
     const subjectMatch = generatedEmail.match(/Subject: (.*)/);
-    const subject = subjectMatch ? subjectMatch[1] : "Email from CampusConnect";
+    const subject = subjectMatch ? subjectMatch[1] : "Email from ZapDosConnect";
     
     // Find the start of the body after the subject line (and potential newlines)
     const bodyStartIndex = subjectMatch ? generatedEmail.indexOf(subjectMatch[0]) + subjectMatch[0].length : 0;
